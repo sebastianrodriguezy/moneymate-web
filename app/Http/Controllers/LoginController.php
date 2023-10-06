@@ -12,7 +12,6 @@ class LoginController extends Controller
   public function show(Request $request)
   {
     $remember_user = $request->cookie('remember_user');
-    /* dd($request->cookie('remember_user')); */
     $data = [
       'remember_user' => $remember_user
     ];
@@ -42,7 +41,7 @@ class LoginController extends Controller
       return redirect('/home')->withCookies([$cookie, $remember_cookie]);
     }
 
-    return redirect('/login')->with('errors', ['Invalid Credentials']);
+    return redirect('/login')->withErrors(['credentials' => 'Invalid Credentials']);
   }
 
   public function logout(Request $request): RedirectResponse
@@ -53,6 +52,6 @@ class LoginController extends Controller
 
     $request->session()->regenerateToken();
 
-    return redirect('/login')->with('message', 'Logged out successfully.');
+    return redirect('/login')->with(['success' => 'Logged out successfully.']);
   }
 }

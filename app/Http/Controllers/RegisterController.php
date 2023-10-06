@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\RegisterRequest;
-use App\Models\User;
-
 use Illuminate\Support\Str;
-use Illuminate\Http\Request;
+use App\Models\User;
+use App\Http\Requests\RegisterRequest;
 
 class RegisterController extends Controller
 {
@@ -22,6 +20,6 @@ class RegisterController extends Controller
     $newUserData = ['user_id' => $userID, ...$requestData];
 
     $user = User::create($newUserData);
-    return redirect('/login')->with('message', 'User created succesfully');
+    return redirect('/login')->with(['success' => 'User created succesfully']);
   }
 }

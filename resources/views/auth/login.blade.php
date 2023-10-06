@@ -27,15 +27,12 @@
           ¿Olvisaste tu contraseña?
         </a>
       </div>
-      @if (isset($errors) && count($errors) > 0)
-        <ul class="mb-6">
-          @foreach ($errors->all() as $error)
-            <li class="text-red-600 dark:text-red-400 leading-4 text-sm">
-              - {{ $error }}
-            </li>
-          @endforeach
-        </ul>
-      @endif
+
+      <p class="text-red-500">{{ session('message') }}</p>
+
+      @include('partials.form-errors')
+      @include('partials.form-message')
+
       <input type="submit" value="Iniciar Sesión" class="button-b w-full" />
       <div class="flex flex-row items-center leading-4">
         <p class="text-sm mr-2 dark:text-gray-300 text-gray-90">¿Aún no tienes una cuenta?</p>
