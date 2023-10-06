@@ -32,15 +32,10 @@
         <label for="password_confirm" class="label-base">Confirmar contraseña</label>
         <input type="password" id="password_confirm" name="password_confirm" class="input-base" placeholder="*********" required />
       </div>
-      @if (isset($errors) && count($errors) > 0)
-        <ul class="mb-6">
-          @foreach ($errors->all() as $error)
-            <li class="text-red-600 dark:text-red-400 leading-4 text-sm">
-              - {{ $error }}
-            </li>
-          @endforeach
-        </ul>
-      @endif
+
+      @include('partials.form-errors')
+      @include('partials.form-message')
+      
       <input type="submit" value="Reestablecer" class="button-b w-full" />
       <div class="flex flex-row items-center leading-4">
         <p class="text-sm mr-2 dark:text-gray-300 text-gray-90">¿Recordaste tu contraseña?</p>

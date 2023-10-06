@@ -41,7 +41,7 @@ class LoginController extends Controller
       return redirect('/home')->withCookies([$cookie, $remember_cookie]);
     }
 
-    return redirect('/login')->withErrors(['credentials' => 'Invalid Credentials']);
+    return redirect('/login')->withErrors(['invalid_credentials' => __('auth.invalid')]);
   }
 
   public function logout(Request $request): RedirectResponse
@@ -52,6 +52,6 @@ class LoginController extends Controller
 
     $request->session()->regenerateToken();
 
-    return redirect('/login')->with(['success' => 'Logged out successfully.']);
+    return redirectLocale('/login', $request)->with(['status' => __('messages.logout')]);
   }
 }

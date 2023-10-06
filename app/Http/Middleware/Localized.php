@@ -23,8 +23,9 @@ class Localized
       return redirect($this->localizedUrl($request->path()));
     }
 
-    $request->session()->put('locale', $routeLocale);
-    app()->setLocale($routeLocale);
+    $locale = $routeLocale;
+    $this->setLocaleCookie($locale);
+    app()->setLocale($locale);
 
     return $next($request);
   }
@@ -34,10 +35,17 @@ class Localized
     /**
      * Get the default locale if it's not defined
      */
-    if (!$locale and request()->session()->has('locale')) {
-      $locale = request()->session()->get('locale');
+    if (!$locale and request()->hasCookie('locale')) {
+      $locale = request()->cookie('locale');
+    } else {
+      $locale = config('app.locale');
     }
 
     return url(trim($locale . '/' . $path, '/'));
+  }
+
+  private function setLocaleCookie(string $locale): void
+  {
+    cookie()->queue('locale', $locale);
   }
 }

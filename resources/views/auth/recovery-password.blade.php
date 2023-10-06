@@ -13,15 +13,10 @@
         <input type="email" id="email" name="email" value="{{ old('email') }}" class="input-base" placeholder="email@email.com" required />
         <p class="ml-2 mt-0.5 text-xs text-gray-500 dark:text-gray-400">Se enviara un correo con el link de reestablecimiento de contraseña al email ingresado</p>
       </div>
-      @if (isset($errors) && count($errors) > 0)
-        <ul class="mb-6">
-          @foreach ($errors->all() as $error)
-            <li class="text-red-600 dark:text-red-400 leading-4 text-sm">
-              - {{ $error }}
-            </li>
-          @endforeach
-        </ul>
-      @endif
+
+      @include('partials.form-errors')
+      @include('partials.form-message')
+      
       <input type="submit" value="Enviar email" class="button-b w-full" />
       <div class="flex flex-row items-center leading-4">
         <p class="text-sm mr-2 dark:text-gray-300 text-gray-90">¿Recordaste tu contraseña?</p>

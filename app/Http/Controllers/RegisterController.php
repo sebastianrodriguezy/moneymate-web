@@ -32,7 +32,6 @@ class RegisterController extends Controller
       UserConfig::create($userConfigData);
     });
 
-
-    return redirect('/login')->with(['success' => 'User created succesfully']);
+    return redirect('/login')->with(['status' => __('auth.registered')]);
   }
 }
