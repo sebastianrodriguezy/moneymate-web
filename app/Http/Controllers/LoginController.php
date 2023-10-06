@@ -38,10 +38,10 @@ class LoginController extends Controller
         $remember_cookie = cookie('remember_user', null);
       }
 
-      return redirect('/home')->withCookies([$cookie, $remember_cookie]);
+      return redirectLocale('/home', $request)->withCookies([$cookie, $remember_cookie]);
     }
 
-    return redirect('/login')->withErrors(['invalid_credentials' => __('auth.invalid')]);
+    return redirectLocale('/login', $request)->withErrors(['invalid_credentials' => __('auth.invalid')]);
   }
 
   public function logout(Request $request): RedirectResponse

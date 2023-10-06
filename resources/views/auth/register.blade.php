@@ -1,44 +1,39 @@
 <x-layouts.auth>
 
   <x-slot:title>
-    Nuevo Registro
+    {{ __('messages.register_title') }}
   </x-slot>
 
   <div class="flex flex-col w-full">
     <form method="POST" action="/register">
       @csrf
-      <h1 class="title">Crea una nueva cuenta</h1>
+      <h1 class="title">{{ __('messages.register_description') }}</h1>
       <div class="mb-3">
-        <label for="name" class="label-base">Nombre</label>
-        <input type="text" id="name" name="name" class="input-base" placeholder="Tu nombre" value="{{ old('name') }}" required />
+        <label for="name" class="label-base">{{ __('messages.name_label') }}</label>
+        <input type="text" id="name" name="name" class="input-base" placeholder="{{ __('messages.name_placeholder') }}" value="{{ old('name') }}" required />
       </div>
       <div class="mb-3">
-        <label for="email" class="label-base">Email</label>
+        <label for="email" class="label-base">{{ __('messages.email_label') }}</label>
         <input type="email" id="email" name="email" class="input-base" placeholder="email@email.com" value="{{ old('email') }}" required />
       </div>
       <div class="mb-3">
-        <label for="password" class="label-base">Contraseña</label>
+        <label for="password" class="label-base">{{ __('messages.password_label') }}</label>
         <input type="password" id="password" name="password" class="input-base" placeholder="*********" required />
-        <p class="ml-2 mt-0.5 text-xs text-gray-500 dark:text-gray-400">La contraseña debe contener [terminar]</p>
+        <p class="ml-2 mt-0.5 text-xs text-gray-500 dark:text-gray-400">{{ __('messages.password_requirements') }}</p>
       </div>
       <div class="mb-3">
-        <label for="password_confirm" class="label-base">Confirmar contraseña</label>
+        <label for="password_confirm" class="label-base">{{ __('messages.confirm_label') }}</label>
         <input type="password" id="password_confirm" name="password_confirm" class="input-base" placeholder="*********" required />
       </div>
-      @if (isset($errors) && count($errors) > 0)
-        <ul class="mb-6">
-          @foreach ($errors->all() as $error)
-            <li class="text-red-600 dark:text-red-400 leading-4 text-sm">
-              - {{ $error }}
-            </li>
-          @endforeach
-        </ul>
-      @endif
-      <input type="submit" value="Registrarse" class="button-b w-full" />
+      
+      @include('partials.form-errors')
+      @include('partials.form-message')
+
+      <input type="submit" value="{{ __('messages.register_action') }}" class="button-b w-full" />
       <div class="flex flex-row items-center leading-4">
-        <p class="text-sm mr-2 dark:text-gray-300 text-gray-90">¿Ya tienes una cuenta?</p>
-        <a href="/login" title="Registrarse" class="link-b">
-          Iniciar sesión
+        <p class="text-sm mr-2 dark:text-gray-300 text-gray-90">{{ __('messages.have_account') }}</p>
+        <a href="/login" title="{{ __('messages.login_title') }}" class="link-b">
+          {{ __('messages.login_title') }}
         </a>
       </div>
     </form>

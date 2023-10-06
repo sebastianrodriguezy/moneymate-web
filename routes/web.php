@@ -41,6 +41,7 @@ Route::prefix('{locale?}')->middleware('localized')->group(function () {
 Route::middleware('guest')->group(function () {
   Route::post('/authenticate', [LoginController::class, 'authenticate']);
   Route::post('/register', [RegisterController::class, 'register']);
+  Route::post('/recovery-password', [ResetPasswordController::class, 'sendMail'])->name('password.request');
   Route::post('/reset-password', [ResetPasswordController::class, 'resetPassword'])->name('password.update');
 });
 

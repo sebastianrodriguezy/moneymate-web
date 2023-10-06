@@ -32,6 +32,6 @@ class RegisterController extends Controller
       UserConfig::create($userConfigData);
     });
 
-    return redirect('/login')->with(['status' => __('auth.registered')]);
+    return redirectLocale('/login', $request)->with(['status' => __('auth.registered')]);
   }
 }

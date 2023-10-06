@@ -12,12 +12,12 @@ use Illuminate\Validation\Rules\Password as RulesPassword;
 
 class ResetPasswordController extends Controller
 {
-  public function showEmail ()
+  public function showEmail()
   {
     return view('auth.recovery-password');
   }
 
-  public function showReset (Request $request, string $token)
+  public function showReset(Request $request, string $token)
   {
     $email = $request->query('email');
     $data = ['token' => $token, 'email' => $email];
@@ -25,20 +25,20 @@ class ResetPasswordController extends Controller
     return view('auth.reset-password', $data);
   }
 
-  public function sendMail (Request $request)
+  public function sendMail(Request $request)
   {
     $request->validate(['email' => 'required|email']);
 
     $status = Password::sendResetLink($request->only('email'));
 
-    if($status === Password::RESET_LINK_SENT) {
-      return back()->with(['status' => __($status)]);
+    if ($status === Password::RESET_LINK_SENT) {
+      return backLocale($request)->with(['status' => __($status)]);
     }
 
-    return back()->withErrors(['email' => __($status)]);
+    return backLocale($request)->withErrors(['email' => __($status)]);
   }
 
-  public function resetPassword (Request $request)
+  public function resetPassword(Request $request)
   {
     $credentials = $request->only('email', 'password', 'password_confirmation', 'token');
 
@@ -66,10 +66,10 @@ class ResetPasswordController extends Controller
       }
     );
 
-    if($status === Password::PASSWORD_RESET) {
-      return redirect()->route('login')->with(['status' => __($status)]);
+    if ($status === Password::PASSWORD_RESET) {
+      return redirectLocale('/login', $request)->with(['status' => __($status)]);
     }
 
-    return back()->withErrors(['email' => __($status)]);
+    return backLocale($request)->withErrors(['email' => __($status)]);
   }
 }

@@ -14,5 +14,17 @@ return [
   'invalid' => 'Credenciales no válidas',
   'logout' => 'Cierre de sesión exitoso.',
   'registered' => 'Usuario creado exitosamente',
+  'password_requirements' => 'La contraseña debe cumplir con los siguientes requisitos: al menos una letra, una mayúscula y una minúscula, un número y un símbolo.',
+  'register_title' => 'Registro Nuevo',
+  'register_description' => 'Crear cuenta',
+  'name_label' => 'Nombre',
+  'have_account' => '¿Ya tienes una cuenta creada?',
+  'register_action' => 'Registrarse',
+  'name_placeholder' => 'Tu nombre',
+  'recovery_pass_title' => 'Recuperar tu Contraseña',
+  'recovery_pass_description' => 'Recupera el acceso a tu cuenta',
+  'recovery_pass_helper_text' => 'Recibirás un correo con el enlace para restablecer tu contraseña en la dirección de email proporcionada.',
+  'find_password' => '¿Encontraste tu contraseña?',
+  'recovery_pass_action' => 'Enviar email',
 
 ];
