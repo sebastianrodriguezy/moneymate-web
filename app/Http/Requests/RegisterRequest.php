@@ -24,9 +24,9 @@ class RegisterRequest extends FormRequest
   {
     return [
       'name' => 'required|min:5',
-      'email' => 'required|email|unique:user,email',
+      'email' => 'required|email|unique:users,email',
       'password' => [
-        'required', 
+        'required',
         Password::min(8)
           ->letters()
           ->mixedCase()
