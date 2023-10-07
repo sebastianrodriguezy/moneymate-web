@@ -26,5 +26,7 @@ return [
   'recovery_pass_helper_text' => 'Recibirás un correo con el enlace para restablecer tu contraseña en la dirección de email proporcionada.',
   'find_password' => '¿Encontraste tu contraseña?',
   'recovery_pass_action' => 'Enviar email',
+  'reset_password_title' => 'Restablecer Contraseña',
+  'reset_password_description' => 'Crea tu nueva contraseña'
 
 ];

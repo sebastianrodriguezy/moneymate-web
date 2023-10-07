@@ -26,6 +26,7 @@ return [
   'recovery_pass_helper_text' => 'You will receive an email with the link to reset your password at the provided email address.',
   'find_password' => 'Did you find your password?',
   'recovery_pass_action' => 'Send Email',
-
+  'reset_password_title' => 'Reset Password',
+  'reset_password_description' => 'Create your new password',
 
 ];
