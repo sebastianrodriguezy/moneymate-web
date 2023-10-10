@@ -1,6 +1,6 @@
 <x-partials.base>
   <x-slot:title>
-    {{ $title ? $title : 'Home' }}
+    {{ $title ? $title : 'Login' }}
   </x-slot:title>
 
   <main class="w-full h-screen flex flex-row items-center justify-center px-4">
