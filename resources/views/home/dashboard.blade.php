@@ -1,4 +1,4 @@
-<x-layouts.dashboard>
+<x-layouts.dashboard :user="$user">
 
   <x-slot:title>
     Inicio

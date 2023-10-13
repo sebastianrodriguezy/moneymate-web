@@ -1,10 +1,19 @@
-const $ = (selector) => document.querySelector(selector);
+const token = document.querySelector("#user_token");
+const userId = document.querySelector("#user_id");
 
-const themeButton = $("#theme");
+const PREFIX = "/api";
 
-themeButton.addEventListener("click", () => {
-    const actualTheme = document.body.dataset.mode;
+export const API = {
+    config: {
+        updateTheme: `${PREFIX}/update_theme`,
+        getConfig: `${PREFIX}/get_config`,
+        updateConfig: `${PREFIX}/update_config`,
+    },
+};
 
-    if (actualTheme === "dark") document.body.dataset.mode = "light";
-    else document.body.dataset.mode = "dark";
-});
+export const commonHeaders = {
+    "Content-type": "application/json",
+    Authorization: `Bearer ${token.value}`,
+};
+
+export const getUserId = () => userId.value;

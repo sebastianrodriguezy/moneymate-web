@@ -1,7 +1,11 @@
 <aside class="w-full max-w-[280px] bg-gray-100 dark:bg-gray-800 p-6 flex flex-col text-gray-700 dark:text-gray-100">
+  
+  <input type="hidden" name="user_id" id="user_id" value="{{ $user->user_id }}">
+  <input type="hidden" name="user_token" id="user_token" value="{{ request()->cookie('auth_token') }}">
+  
   <a href="en/home" title="asdasdasd" target="self" class="flex w-full justify-center">
     <figure class="max-w-[150px] w-full mb-2 text-left">
-      <img alt="Logo de la aplicación" src="/img/logo_white.png"  />
+      <img id="logo" alt="Logo de la aplicación" x-data x-bind:src="$store.darkMode.logo"  />
     </figure>
   </a>
 
@@ -17,21 +21,23 @@
   </form>
 
   <div class="flex flex-col items-center w-full my-6">
-    <figure class="mb-6 w-full max-w-[80px] h-full max-h-[80px] overflow-hidden rounded-full">
-      <img alt="User Avatar" width="100%" src="https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?w=826&t=st=1696908592~exp=1696909192~hmac=d7d24f9b3e05db4c770af7687d87447681a6ac87ce56ed6b986b326200fccbc8" />
-    </figure>
-    <p class="leading-4 font-semibold mb-2 text-center">Juan Sebastian Rodriguez</p>
-    <p class="leading-4 font-extralight text-sm text-gray-500 dark:text-gray-400">sky.sebas.2020@gmail.com</p>
+    <a href="en/user" title="asdasdasd" target="self" class="flex w-full justify-center mb-6">
+      <figure class="w-full max-w-[80px] h-full max-h-[80px] overflow-hidden rounded-full">
+        <img alt="User Avatar" width="100%" src="https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?w=826&t=st=1696908592~exp=1696909192~hmac=d7d24f9b3e05db4c770af7687d87447681a6ac87ce56ed6b986b326200fccbc8" />
+      </figure>
+    </a>
+    <p class="leading-4 font-semibold mb-2 text-center">{{ $user->name }}</p>
+    <p class="leading-4 font-extralight text-sm text-gray-500 dark:text-gray-400">{{ $user->email }}</p>
   </div>
 
   <form action="/logout" method="POST" class="w-full px-6 flex flex-col items-center">
     @csrf
     <div class="inline-flex rounded-md shadow-sm" role="group">
-      <button id="theme" type="button" class="inline-flex items-center px-4 py-2 text-sm font-medium bg-gray-200 border border-gray-300 rounded-l-md hover:bg-gray-300 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white">
-        <ion-icon name="sunny" class="text-gray-600 dark:text-gray-300 w-5 h-5"></ion-icon>
+      <button @click="await $store.darkMode.toggle()" type="button" class="inline-flex items-center px-4 py-2 text-sm font-medium bg-gray-100 border border-gray-300 group rounded-l-md hover:bg-gray-200 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white">
+        <ion-icon name="sunny" class="text-gray-500 dark:text-gray-300 w-5 h-5 group-hover:text-brand-500"></ion-icon>
       </button>
-      <button type="submit" class="inline-flex items-center px-4 py-2 text-sm font-medium bg-gray-200 border border-gray-300 rounded-r-md hover:bg-gray-300 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white">
-        <ion-icon name="log-out" class="text-gray-600 dark:text-gray-300 w-5 h-5"></ion-icon>
+      <button type="submit" class="inline-flex items-center px-4 py-2 text-sm font-medium bg-gray-100 border border-gray-300 group rounded-r-md hover:bg-gray-200 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white">
+        <ion-icon name="log-out" class="text-gray-500 dark:text-gray-300 w-5 h-5 group-hover:text-brand-500"></ion-icon>
       </button>
     </div>
   </form>
@@ -41,29 +47,54 @@
   <div class="h-full overflow-y-auto">
     <ul class="space-y-2 font-medium">
        <li>
-          <a href="#" class="flex items-center p-2 text-gray-700 rounded-md dark:text-white hover:bg-gray-300/40 dark:hover:bg-gray-700 group">
+          <a href="#" class="flex items-center p-2 text-gray-700 rounded-md dark:text-white hover:bg-brand-500/10 dark:hover:bg-gray-700 group">
              <ion-icon name="reader" class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-800 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 22 21"></ion-icon>
              <span class="flex-1 ml-3">Movimientos</span>
           </a>
        </li>
        <li>
-          <a href="#" class="flex items-center p-2 text-gray-700 rounded-md dark:text-white hover:bg-gray-300/40 dark:hover:bg-gray-700 group">
+          <a href="#" class="flex items-center p-2 text-gray-700 rounded-md dark:text-white hover:bg-brand-500/10 dark:hover:bg-gray-700 group">
              <ion-icon name="pricetags" class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-800 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 22 21"></ion-icon>
              <span class="flex-1 ml-3 whitespace-nowrap">Categorias</span>
           </a>
        </li>
        <li>
-          <a href="#" class="flex items-center p-2 text-gray-700 rounded-md dark:text-white hover:bg-gray-300/40 dark:hover:bg-gray-700 group">
+          <a href="#" class="flex items-center p-2 text-gray-700 rounded-md dark:text-white hover:bg-brand-500/10 dark:hover:bg-gray-700 group">
              <ion-icon name="people" class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-800 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 22 21"></ion-icon>
              <span class="flex-1 ml-3 whitespace-nowrap">Personas</span>
           </a>
        </li>
        <li>
-          <a href="#" class="flex items-center p-2 text-gray-700 rounded-md dark:text-white hover:bg-gray-300/40 dark:hover:bg-gray-700 group">
+          <a href="#" class="flex items-center p-2 text-gray-700 rounded-md dark:text-white hover:bg-brand-500/10 dark:hover:bg-gray-700 group">
              <ion-icon name="bar-chart" class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-800 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 22 21"></ion-icon>
              <span class="flex-1 ml-3 whitespace-nowrap">Reportes</span>
           </a>
        </li>
+    </ul>
+
+    <div class="flex flex-col gap-2 border-b border-gray-300 dark:border-gray-600 pb-1 mt-6 mb-3">
+      <p class="leading-4 text-sm text-gray-400">Accesos rapidos</p>
+    </div>
+
+    <ul class="space-y-2 font-semibold">
+      <li>
+        <a href="#" class="flex items-center px-2 py-1 text-gray-700 dark:text-white group">
+           <div class="inline-flex mr-3 w-4 h-4 rounded-md bg-brand-400"></div>
+           <span class="transition flex-1 group-hover:underline">Nuevo movimiento</span>
+        </a>
+     </li>
+      <li>
+        <a href="#" class="flex items-center px-2 py-1 text-gray-700 dark:text-white group">
+           <div class="inline-flex mr-3 w-4 h-4 rounded-md bg-teal-400"></div>
+           <span class="transition flex-1 group-hover:underline">Nueva categoria</span>
+        </a>
+     </li>
+      <li>
+        <a href="#" class="flex items-center px-2 py-1 text-gray-700 dark:text-white group">
+           <div class="inline-flex mr-3 w-4 h-4 rounded-md bg-violet-400"></div>
+           <span class="transition flex-1 group-hover:underline">Configuración</span>
+        </a>
+     </li>
     </ul>
   </div>
 
