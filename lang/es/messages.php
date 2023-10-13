@@ -27,6 +27,20 @@ return [
   'find_password' => '¿Encontraste tu contraseña?',
   'recovery_pass_action' => 'Enviar email',
   'reset_password_title' => 'Restablecer Contraseña',
-  'reset_password_description' => 'Crea tu nueva contraseña'
+  'reset_password_description' => 'Crea tu nueva contraseña',
+  'home_title' => 'Inicio',
+  'alt_logo' => 'Logotipo de la aplicación',
+  'search_category_sr' => 'Buscar Categorías',
+  'search_category_placeholder' => 'Buscar Categorías, Personas...',
+  'user_profile_title' => 'Perfil de Usuario',
+  'user_profile_avatar_alt' => 'Avatar del Usuario',
+  'nav_link_movements' => 'Movimientos',
+  'nav_link_categories' => 'Categorías',
+  'nav_link_persons' => 'Personas',
+  'nav_link_reports' => 'Reportes',
+  'nav_link_new_movement' => 'Nuevo Movimiento',
+  'nav_link_new_category' => 'Nueva Categoría',
+  'nav_link_config' => 'Configuración',
+  'nav_additional_items_ittle' => 'Accesos rápidos',
 
 ];

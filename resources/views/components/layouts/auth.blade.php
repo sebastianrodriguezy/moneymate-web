@@ -1,6 +1,6 @@
 <x-partials.base>
   <x-slot:title>
-    {{ $title ? $title : 'Login' }}
+    {{ $title ? $title : __('messages.login_title') }}
   </x-slot:title>
 
   <main class="w-full h-screen flex flex-row items-center justify-center px-4">
@@ -15,5 +15,5 @@
     </figure>
   </main>
 
-  <div class="bg-pattern w-full h-screen absolute inset-0" />
+  <div class="bg-pattern w-full h-screen absolute inset-0"></div>
 </x-partials.base>

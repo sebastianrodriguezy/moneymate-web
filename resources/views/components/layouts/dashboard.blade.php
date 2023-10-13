@@ -10,5 +10,5 @@
     </section>
   </main>
 
-  <div class="bg-pattern w-full h-screen absolute inset-0" />
+  <div class="bg-pattern w-full h-screen absolute inset-0"></div>
 </x-partials.base>

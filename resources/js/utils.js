@@ -13,7 +13,7 @@ export const API = {
 
 export const commonHeaders = {
     "Content-type": "application/json",
-    Authorization: `Bearer ${token.value}`,
+    Authorization: `Bearer ${token?.value}`,
 };
 
-export const getUserId = () => userId.value;
+export const getUserId = () => userId?.value;
