@@ -68,7 +68,7 @@
       @foreach ($getQuickAccessItems() as $item)
         <li>
           <a href="{{ $item['to'] }}" class="flex items-center px-2 py-1 text-gray-700 dark:text-white group">
-            <div class="inline-flex mr-3 w-4 h-4 rounded-md {{ $item['color'] }}"></div>
+            <div class="inline-flex mr-3 w-4 h-4 rounded-md {{ $item['color'] === 'brand' ? 'bg-brand-400' : ($item['color'] === 'teal' ? 'bg-teal-400' : 'bg-violet-400') }}"></div>
             <span class="transition flex-1 group-hover:underline">{{ $item['text'] }}</span>
           </a>
       </li>
