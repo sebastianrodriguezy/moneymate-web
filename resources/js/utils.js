@@ -9,6 +9,9 @@ export const API = {
         getConfig: `${PREFIX}/get_config`,
         updateConfig: `${PREFIX}/update_config`,
     },
+    movements: {
+        getMovements: `${PREFIX}/movements`,
+    },
 };
 
 export const commonHeaders = {

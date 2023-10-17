@@ -4,6 +4,7 @@ use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\MovementsController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ResetPasswordController;
 
@@ -35,6 +36,7 @@ Route::prefix('{locale?}')->middleware('localized')->group(function () {
 
   Route::middleware('auth')->group(function () {
     Route::get('/home', [DashboardController::class, 'show']);
+    Route::get('/movements', [MovementsController::class, 'show']);
   });
 });
 

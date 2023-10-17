@@ -30,7 +30,7 @@
     <p class="leading-4 font-extralight text-sm text-gray-500 dark:text-gray-400">{{ $user->email }}</p>
   </div>
   
-  <div class="inline-flex rounded-md shadow-sm px-6" role="group">
+  <div class="inline-flex px-6" role="group">
       <button @click="await $store.darkMode.toggle()" type="button" class="inline-flex items-center px-4 py-2 text-sm font-medium bg-gray-100 border border-gray-300 group rounded-l-md hover:bg-gray-200 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white">
         <ion-icon name="sunny" class="text-gray-500 dark:text-gray-300 w-5 h-5 group-hover:text-brand-500"></ion-icon>
       </button>
@@ -51,12 +51,21 @@
   <div class="h-full overflow-y-auto">
     <ul class="space-y-2 font-medium">
       @foreach ($getNavItems() as $item)
-        <li>
-          <a href="{{ $item['to'] }}" class="flex items-center p-2 text-gray-700 rounded-md dark:text-white hover:bg-brand-500/10 dark:hover:bg-gray-700 group">
-            <ion-icon name="{{ $item['icon'] }}" class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-800 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 22 21"></ion-icon>
-            <span class="flex-1 ml-3">{{ $item['text'] }}</span>
-          </a>
-        </li>
+        @if ($item['active'])
+          <li>
+            <a href="{{ $item['to'] }}" class="flex items-center p-2 text-brand-600 rounded-md dark:text-brand-500 hover:bg-brand-500/10 dark:hover:bg-gray-700 group">
+              <ion-icon name="{{ $item['icon'] }}" class="w-5 h-5 text-brand-600 transition duration-75 dark:text-brand-500" fill="currentColor" viewBox="0 0 22 21"></ion-icon>
+              <span class="flex-1 ml-3 font-semibold">{{ $item['text'] }}</span>
+            </a>
+          </li>
+        @else
+          <li>
+            <a href="{{ $item['to'] }}" class="flex items-center p-2 text-gray-700 rounded-md dark:text-white hover:bg-brand-500/10 dark:hover:bg-gray-700 group">
+              <ion-icon name="{{ $item['icon'] }}" class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-800 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 22 21"></ion-icon>
+              <span class="flex-1 ml-3">{{ $item['text'] }}</span>
+            </a>
+          </li>
+        @endif
       @endforeach
     </ul>
 

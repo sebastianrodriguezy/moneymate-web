@@ -27,26 +27,40 @@ class Sidebar extends Component
 
   public function getNavItems()
   {
+    $path = request()->path();
+    $splitedPath = explode('/', $path);
+    $slug = $splitedPath[1];
+
     return [
+      [
+        'to' => 'home',
+        'icon' => 'home',
+        'text' => __('messages.home_title'),
+        'active' => $slug === 'home'
+      ],
       [
         'to' => 'movements',
         'icon' => 'reader',
-        'text' => __('messages.nav_link_movements')
+        'text' => __('messages.nav_link_movements'),
+        'active' => $slug === 'movements'
       ],
       [
         'to' => 'categories',
         'icon' => 'pricetags',
-        'text' => __('messages.nav_link_categories')
+        'text' => __('messages.nav_link_categories'),
+        'active' => $slug === 'categories'
       ],
       [
         'to' => 'persons',
         'icon' => 'people',
-        'text' => __('messages.nav_link_persons')
+        'text' => __('messages.nav_link_persons'),
+        'active' => $slug === 'persons'
       ],
       [
         'to' => 'reports',
         'icon' => 'bar-chart',
-        'text' => __('messages.nav_link_reports')
+        'text' => __('messages.nav_link_reports'),
+        'active' => $slug === 'reports'
       ],
     ];
   }

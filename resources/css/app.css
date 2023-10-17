@@ -3,6 +3,42 @@
 @tailwind utilities;
 
 @layer base {
+
+  /* Works on Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: theme('colors.gray.300') transparent;
+  }
+
+  /* Works on Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 7px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: theme('colors.gray.200');
+    border-radius: theme('borderRadius.md');
+    border: none;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: theme('colors.gray.300/50');
+  }
+
+  [data-mode="dark"] *::-webkit-scrollbar-thumb {
+    background-color: theme('colors.gray.700');
+    border-radius: theme('borderRadius.md');
+    border: none;
+  }
+
+  [data-mode="dark"] ::-webkit-scrollbar-thumb:hover {
+    background: theme('colors.gray.600/50');
+  }
+
   .bg-pattern {
     background-image: radial-gradient(rgba(14, 163, 232, 0.05) 3px, transparent 3px), radial-gradient(rgba(14, 163, 232, 0.05) 3px, transparent 3px);
     background-size: 70px 70px;
