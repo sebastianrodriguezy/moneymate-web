@@ -18,7 +18,7 @@ class ConfigurationController extends Controller
     $fields = $request->only(['theme', 'user_id']);
     $config = UserConfig::firstWhere('fk_user_id', $fields['user_id']);
 
-    if ($config === null) {
+    if (!$config) {
       return response()->json(
         [
           "status" => 404,
