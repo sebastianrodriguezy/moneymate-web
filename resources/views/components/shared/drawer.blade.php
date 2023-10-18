@@ -14,7 +14,7 @@
     x-transition:leave-end="opacity-0"
   ></div>
   <div 
-    class="fixed z-50 h-screen bg-gray-100 dark:bg-gray-700 w-[380px] text-gray-800 dark:text-gray-200 p-8 right-0 top-0"
+    class="fixed z-50 h-screen bg-gray-100 dark:bg-gray-800 w-[380px] text-gray-800 dark:text-gray-200 p-8 right-0 top-0"
     x-cloak
     x-show="show"
     x-transition:enter="transition ease-out duration-300" 
