@@ -42,9 +42,12 @@
           Categoria
         </th>
         <th scope="col" class="px-6 py-3">
-          Fecha
+          Persona
         </th>
         <th scope="col" class="px-6 py-3">
+          Fecha
+        </th>
+        <th scope="col" class="px-6 py-3 text-center">
           Acciones
         </th>
       </tr>
@@ -62,9 +65,12 @@
           <span class="bg-blue-100 text-blue-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-blue-900 dark:text-blue-300">Abonos</span>
         </td>
         <td class="px-6 py-4">
-          16/06/2023 - 10:59
+          <span class="bg-gray-100 text-gray-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-gray-700 dark:text-gray-300">Viviana</span>
         </td>
         <td class="px-6 py-4">
+          16/06/2023 - 10:59
+        </td>
+        <td class="px-6 py-4 flex items-center justify-center">
           <button type="button" title="Ver detalles" class="text-white bg-brand-600 hover:bg-brand-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center dark:focus:ring-blue-800">
             <ion-icon name="eye" class="text-gray-100 h-3 w-3" fill="none" viewBox="0 0 14 10"></ion-icon>
             <span class="sr-only">Icon description</span>
