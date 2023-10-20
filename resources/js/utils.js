@@ -1,7 +1,7 @@
 const token = document.querySelector("#user_token");
 const userId = document.querySelector("#user_id");
 
-const PREFIX = "/api";
+export const PREFIX = "/api";
 
 export const API = {
     config: {

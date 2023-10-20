@@ -33,7 +33,7 @@ class Movement extends Model
 
   public function category(): HasOne
   {
-    return $this->hasOne(Category::class, 'fk_category_id');
+    return $this->hasOne(Category::class, 'fk_category_id', 'category_id');
   }
 
   public function person(): HasOne

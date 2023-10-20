@@ -28,6 +28,8 @@ Route::middleware('auth:sanctum')->group(function () {
   Route::post('/movement', [MovementsController::class, 'newMovement']);
   Route::post('/category', [CategoriesController::class, 'newCategory']);
   Route::post('/person', [PersonsController::class, 'newPerson']);
+
+  Route::get('/movements', [MovementsController::class, 'getMovements']);
 });
 
 
