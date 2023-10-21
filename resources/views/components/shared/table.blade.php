@@ -22,9 +22,13 @@
       <p class="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">{{ $description }}</p>
     </div>
 
-    <x-shared.drawer :title="__('messages.filtersDrawerTitle')" class="ml-auto">
+    <x-shared.drawer class="ml-auto">
       <x-slot:trigger>
-        <button x-bind="trigger" type="button" class="transition text-white bg-brand-500 hover:bg-brand-600 focus:ring-4 focus:outline-none focus:ring-brand-300 font-medium rounded-md text-sm px-5 py-2 text-center inline-flex items-center dark:bg-brand-600 dark:hover:bg-brand-700 dark:focus:ring-brand-800">
+        <button 
+          @click="openDrawer('filters', {}, '{{ __('messages.filtersDrawerTitle') }}')" 
+          type="button" 
+          class="transition text-white bg-brand-500 hover:bg-brand-600 focus:ring-4 focus:outline-none focus:ring-brand-300 font-medium rounded-md text-sm px-5 py-2 text-center inline-flex items-center dark:bg-brand-600 dark:hover:bg-brand-700 dark:focus:ring-brand-800"
+        >
           <ion-icon name="filter" class="w-3.5 h-3.5 mr-2" aria-hidden="true"></ion-icon>
           {{ __('messages.filtersTitle') }}
         </button>

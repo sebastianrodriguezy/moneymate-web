@@ -58,5 +58,8 @@ return [
   'movementsTableColDate' => 'Date',
   'movementsTableColCreated' => 'Creation',
   'filtersDrawerTitle' => 'Apply Filters',
+  'movementDetailsDrawerTitle' => 'Movement Details',
+  'buttonSeeDetailsTitle' => 'See more details',
+
 
 ];

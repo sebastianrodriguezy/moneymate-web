@@ -45,17 +45,17 @@ export default () => ({
 
         const colors = {
             ["default"]: "bg-gray-700 dark:bg-gray-600",
-            ["primary"]: "bg-brand-500 dark:bg-brand-500",
-            ["secondary"]: "bg-orange-500 dark:bg-orange-500",
-            ["tertiary"]: "bg-cyan-500 dark:bg-cyan-500",
-            ["rose"]: "bg-rose-500 dark:bg-rose-500",
-            ["purple"]: "bg-purple-500 dark:bg-purple-500",
-            ["indigo"]: "bg-indigo-500 dark:bg-indigo-500",
-            ["amber"]: "bg-amber-500 dark:bg-amber-500",
-            ["blueGray"]: "bg-violet-500 dark:bg-violet-500",
-            ["red"]: "bg-red-500 dark:bg-red-500",
-            ["yellow"]: "bg-yellow-500 dark:bg-yellow-500",
-            ["lime"]: "bg-lime-500 dark:bg-lime-500",
+            ["primary"]: "bg-brand-500 dark:bg-brand-600",
+            ["secondary"]: "bg-orange-500 dark:bg-orange-600",
+            ["tertiary"]: "bg-cyan-500 dark:bg-cyan-600",
+            ["rose"]: "bg-rose-500 dark:bg-rose-600",
+            ["purple"]: "bg-purple-500 dark:bg-purple-600",
+            ["indigo"]: "bg-indigo-500 dark:bg-indigo-600",
+            ["amber"]: "bg-amber-500 dark:bg-amber-600",
+            ["blueGray"]: "bg-violet-500 dark:bg-violet-600",
+            ["red"]: "bg-red-500 dark:bg-red-600",
+            ["yellow"]: "bg-yellow-500 dark:bg-yellow-600",
+            ["lime"]: "bg-lime-500 dark:bg-lime-600",
         };
 
         return colors[name];

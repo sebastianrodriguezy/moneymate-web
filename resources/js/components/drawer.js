@@ -1,13 +1,15 @@
 export default () => ({
-    show: false,
-    trigger: {
-        ["@click"]() {
-            this.show = true;
-        },
+    showDrawer: false,
+    titleDrawer: "",
+    activeDrawer: "filters",
+    dataDrawer: {},
+    openDrawer(drawer = "filters", data = {}, title = "") {
+        this.activeDrawer = drawer;
+        this.titleDrawer = title;
+        this.dataDrawer = data;
+        this.showDrawer = true;
     },
-    close: {
-        ["@click"]() {
-            this.show = false;
-        },
+    closeDrawer() {
+        this.showDrawer = false;
     },
 });

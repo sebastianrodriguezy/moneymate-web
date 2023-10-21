@@ -32,14 +32,12 @@ export default (endpoint = "") => ({
             headers: commonHeaders,
         });
 
-        console.log({ response });
-
         const {
             data: { totalRows, count, rows, offset },
         } = response.data;
 
         this.totalPages =
-            Math.floor(count / 4) === 0 ? 1 : Math.floor(count / 4);
+            Math.floor(count / 10) === 0 ? 1 : Math.floor(count / 10);
         this.totalRows = totalRows;
         this.rowsShowing = offset === 0 ? 1 : offset;
         this.totalRowsShowing = count;
