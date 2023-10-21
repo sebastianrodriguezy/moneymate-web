@@ -39,7 +39,7 @@ export default (endpoint = "") => ({
         } = response.data;
 
         this.totalPages =
-            Math.floor(count / 10) === 0 ? 1 : Math.floor(count / 10);
+            Math.floor(count / 4) === 0 ? 1 : Math.floor(count / 4);
         this.totalRows = totalRows;
         this.rowsShowing = offset === 0 ? 1 : offset;
         this.totalRowsShowing = count;

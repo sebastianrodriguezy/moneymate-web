@@ -70,7 +70,7 @@ class MovementsController extends Controller
 
     $user = $request->user();
 
-    $limit = 10;
+    $limit = 4;
     $page = isset($fields['page']) ? (int) $fields['page'] : 1;
     $offset = $page === 1 ? 0 : ($page * $limit) - $limit;
 

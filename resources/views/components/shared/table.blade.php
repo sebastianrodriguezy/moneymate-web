@@ -67,8 +67,8 @@
     <ul class="inline-flex -space-x-px text-sm h-8">
       <li>
         <button 
-          class="flex items-center justify-center px-3 h-8 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400"
-          :class="page === 1 ? 'text-gray-300 dark:text-gray-500 cursor-default' : 'dark:hover:bg-gray-700 dark:hover:text-white hover:bg-gray-100 hover:text-gray-700'"
+          class="flex items-center justify-center px-3 h-8 ml-0 leading-tight bg-white border border-gray-300 rounded-l-lg dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400"
+          :class="page === 1 ? 'text-gray-300 dark:text-gray-500 cursor-default' : 'text-gray-500 dark:hover:bg-gray-700 dark:hover:text-white hover:bg-gray-100 hover:text-gray-700'"
           @click="changePage(page - 1)"
         >
           {!! __('pagination.previous') !!}
@@ -78,10 +78,10 @@
         <li>
           <button 
             :class="[
-              (!item ? 'text-gray-300 dark:text-gray-500' : 'hover:bg-gray-100 hover:text-gray-700 dark:hover:bg-gray-700 dark:hover:text-white'),
-              (page === item ? 'text-brand-600 bg-brand-50 hover:text-brand-700 hover:bg-brand-100 dark:text-brand-400 dark:bg-brand-800 hover:dark:bg-brand-900 hover:dark:text-brand-500' : '') 
+              (!item ? 'text-gray-300 dark:text-gray-500' : 'text-gray-500 bg-white hover:bg-gray-100 dark:bg-gray-800 dark:text-gray-400 hover:text-gray-700 dark:hover:bg-gray-700 dark:hover:text-white'),
+              (page === item ? '!text-brand-600 !bg-brand-100 hover:!text-brand-700 hover:!bg-brand-200 dark:!text-brand-400 dark:!bg-brand-800 hover:dark:!bg-brand-900 hover:dark:!text-brand-500' : '') 
             ]"
-            class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400"
+            class="flex items-center justify-center px-3 h-8 leading-tight border border-gray-300 dark:border-gray-700"
             x-text="item ? item : '...'"
             x-bind:disabled="!item"
             @click="changePage(item)"
