@@ -1,5 +1,6 @@
 export default () => ({
     showDrawer: false,
+    showDrawerSecondaryAction: false,
     titleDrawer: "",
     activeDrawer: "filters",
     dataDrawer: {},
