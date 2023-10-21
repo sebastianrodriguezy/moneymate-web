@@ -771,7 +771,7 @@
     </style>
   </head>
 
-  <body class="antialiased" x-data :data-mode="$store.darkMode.on ? 'dark' : 'light'">
+  <body class="antialiased" x-data="helpers" :data-mode="$store.darkMode.on ? 'dark' : 'light'">
     {{ $slot }}
 
     {{-- Ion Icons --}}

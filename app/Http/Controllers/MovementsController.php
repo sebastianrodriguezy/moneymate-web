@@ -11,7 +11,7 @@ class MovementsController extends Controller
   public function show()
   {
     $user = auth()->user();
-    $tableCols = ['Cantidad', 'Tipo', 'Categoria', 'Persona', 'Fecha'];
+    $tableCols = ['Cantidad', 'Tipo', 'Categoria', 'Persona', 'Fecha', 'Creación'];
 
     return view('home.movements', [
       'user' => $user,
@@ -91,6 +91,7 @@ class MovementsController extends Controller
     $count = $query->count();
     $results = $query->skip($offset)
       ->take($limit)
+      ->orderBy('movement_date', 'desc')
       ->get()
       ->toArray();
 
