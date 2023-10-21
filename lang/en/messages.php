@@ -60,6 +60,9 @@ return [
   'filtersDrawerTitle' => 'Apply Filters',
   'movementDetailsDrawerTitle' => 'Movement Details',
   'buttonSeeDetailsTitle' => 'See more details',
-
+  'movementComments' => 'Comments',
+  'movementDateMoment' => 'Movement Date',
+  'movementDateCreated' => 'Creation Date',
+  'notSpecified' => 'Not specified',
 
 ];
