@@ -13,7 +13,9 @@ class Table extends Component
    */
   public function __construct(
     public $headings = [],
-    public string $endpoint = ''
+    public string $endpoint = '',
+    public string $title = '',
+    public string $description = ''
   ) {
     //
   }

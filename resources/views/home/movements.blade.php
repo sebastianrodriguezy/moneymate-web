@@ -8,7 +8,12 @@
     <h1 class="text-2xl">Aqui el titulo</h1>
   </div>
   
-  <x-shared.table :headings="$tableCols" :endpoint="'/movements'">
+  <x-shared.table 
+    :headings="$tableCols" 
+    :endpoint="'/movements'"
+    :title="__('messages.movementsTableTitle')"
+    :description="__('messages.movementsTableDesc')"
+  >
     <x-slot name="filters">
       <p>Hola que hace</p>
     </x-slot>
@@ -28,10 +33,10 @@
           </th>
           <td class="px-6 py-4">
             <template x-if="row.type === 'discharge'">
-              <span>Egreso</span>
+              <span>{{ __('messages.discharge') }}</span>
             </template>
             <template x-if="row.type === 'income'">
-              <span>Ingreso</span>
+              <span>{{ __('messages.income') }}</span>
             </template>
           </td>
           <td class="px-6 py-4">
@@ -67,7 +72,7 @@
           <td class="px-6 py-4 flex items-center justify-center">
             <button type="button" title="Ver detalles" class="text-white bg-brand-600 hover:bg-brand-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center dark:focus:ring-blue-800">
               <ion-icon name="eye" class="text-gray-100 h-3 w-3" fill="none" viewBox="0 0 14 10"></ion-icon>
-              <span class="sr-only">Icon description</span>
+              <span class="sr-only">{{ __('messages.iconDescription') }}</span>
             </button>
           </td>
         </tr>

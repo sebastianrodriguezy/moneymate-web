@@ -11,7 +11,14 @@ class MovementsController extends Controller
   public function show()
   {
     $user = auth()->user();
-    $tableCols = ['Cantidad', 'Tipo', 'Categoria', 'Persona', 'Fecha', 'Creación'];
+    $tableCols = [
+      __('messages.movementsTableColQuantity'),
+      __('messages.movementsTableColType'),
+      __('messages.movementsTableColCategory'),
+      __('messages.movementsTableColPerson'),
+      __('messages.movementsTableColDate'),
+      __('messages.movementsTableColCreated')
+    ];
 
     return view('home.movements', [
       'user' => $user,
