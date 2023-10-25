@@ -25,7 +25,7 @@
     <x-shared.drawer class="ml-auto">
       <x-slot:trigger>
         <button 
-          @click="openDrawer('filters', {}, '{{ __('messages.filtersDrawerTitle') }}')" 
+          @click="openDrawer('filters', null, '{{ __('messages.filtersDrawerTitle') }}')" 
           type="button" 
           class="transition text-white bg-brand-500 hover:bg-brand-600 focus:ring-4 focus:outline-none focus:ring-brand-300 font-medium rounded-md text-sm px-5 py-2 text-center inline-flex items-center dark:bg-brand-600 dark:hover:bg-brand-700 dark:focus:ring-brand-800"
         >

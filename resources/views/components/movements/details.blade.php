@@ -1,5 +1,5 @@
 <template x-if="dataDrawer">
-  <div class="w-full flex flex-col gap-3 p-4 mt-4 leading-4 border dark:border-gray-700 rounded-md">
+  <div class="w-full flex flex-col gap-3 p-4 mt-4 leading-4 shadow-md rounded-md bg-pattern">
 
     <div class="w-full flex flex-row items-center">
       <p class="text-center font-normal mr-2">ID:</p>

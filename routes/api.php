@@ -30,6 +30,8 @@ Route::middleware('auth:sanctum')->group(function () {
   Route::post('/person', [PersonsController::class, 'newPerson']);
 
   Route::get('/movements', [MovementsController::class, 'getMovements']);
+  Route::get('/categories', [CategoriesController::class, 'categories']);
+  Route::get('/persons', [PersonsController::class, 'persons']);
 });
 
 
