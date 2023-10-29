@@ -83,18 +83,22 @@ export default (endpoint = "") => ({
             this.error = error.message;
         }
     },
-    updateFilters: {
-        ["@click"](name, value) {
-            this.filters[name] = value;
-        },
+    updateFilters(name, value) {
+        this.filters[name] = value;
     },
-    applyFilters: {
-        async ["@click"]() {
-            try {
-                await this.callRequest();
-            } catch (error) {
-                this.error = error.message;
-            }
-        },
+    async clearFilters() {
+        this.filters = {};
+        try {
+            await this.callRequest();
+        } catch (error) {
+            this.error = error.message;
+        }
+    },
+    async applyFilters() {
+        try {
+            await this.callRequest();
+        } catch (error) {
+            this.error = error.message;
+        }
     },
 });

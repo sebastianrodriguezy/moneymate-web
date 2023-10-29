@@ -17,7 +17,7 @@
   >
     <x-slot name="filters">
       <template x-if="activeDrawer === 'filters'">
-        <h1 class="text-2xl">Aqui el titulo</h1>
+        <x-movements.filters></x-movements.filters>
       </template>
       
       <template x-if="activeDrawer === 'detail'">

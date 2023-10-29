@@ -57,7 +57,7 @@ class CategoriesController extends Controller
     $offset = $page === 1 ? 0 : ($page * $limit) - $limit;
 
     $query = Category::select(
-      'category_id',
+      'category_id as id',
       'name',
       'color',
       'created_at as date'

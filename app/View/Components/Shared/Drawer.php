@@ -13,7 +13,6 @@ class Drawer extends Component
    */
   public function __construct()
   {
-    //
   }
 
   /**

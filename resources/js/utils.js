@@ -20,3 +20,22 @@ export const commonHeaders = {
 };
 
 export const getUserId = () => userId?.value;
+
+export const catalogs = {
+    categories: {
+        async: true,
+        endpoint: "/categories",
+    },
+    persons: {
+        async: true,
+        endpoint: "/persons",
+    },
+    types: {
+        async: false,
+        endpoint: null,
+        options: [
+            { id: 1, label: "income", key: "messages.income" },
+            { id: 2, label: "discharge", key: "messages.income" },
+        ],
+    },
+};

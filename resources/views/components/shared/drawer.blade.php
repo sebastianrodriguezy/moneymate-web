@@ -34,24 +34,6 @@
         <div class="w-full h-full overflow-y-scroll pb-10">
           {{ $slot }}
         </div>
-        <div class="absolute bottom-0 left-0 w-full h-10 flex flex-row items-center justify-end">
-          <template x-if="showDrawerSecondaryAction">
-            <button
-              @click="closeDrawer()"
-              type="button" 
-              class="w-[160px] transition text-white bg-brand-500 hover:bg-brand-600 focus:ring-4 focus:ring-brand-300 font-medium rounded-md text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-brand-600 dark:hover:bg-brand-700 focus:outline-none dark:focus:ring-brand-800"
-            >
-              Aplicar filtros
-            </button>
-          </template>
-          <button
-            @click="closeDrawer()"
-            type="button" 
-            class="w-[120px] transition text-gray-900 bg-gray-100 border border-gray-300 focus:outline-none hover:bg-gray-200 focus:ring-4 focus:ring-gray-200 font-medium rounded-md text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
-          >
-            Cerrar
-          </button>
-        </div>
       </div>
     </div>
 </div>

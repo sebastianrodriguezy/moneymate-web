@@ -6,18 +6,18 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class Table extends Component
+class Dropdown extends Component
 {
   /**
    * Create a new component instance.
    */
   public function __construct(
-    public $headings = [],
-    public string $endpoint = '',
-    public string $title = '',
-    public string $description = '',
+    public string $catalog = '',
+    public string $label = '',
+    public string $placeholder = '',
+    public string $id = '',
+    public $onSelect = null
   ) {
-    //
   }
 
   /**
@@ -25,6 +25,6 @@ class Table extends Component
    */
   public function render(): View|Closure|string
   {
-    return view('components.shared.table');
+    return view('components.shared.dropdown');
   }
 }

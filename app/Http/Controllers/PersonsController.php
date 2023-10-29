@@ -56,7 +56,7 @@ class PersonsController extends Controller
     $offset = $page === 1 ? 0 : ($page * $limit) - $limit;
 
     $query = Person::select(
-      'person_id',
+      'person_id as id',
       'name',
       'created_at as date'
     )

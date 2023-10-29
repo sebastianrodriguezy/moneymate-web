@@ -6,6 +6,7 @@ import lang from "./components/lang";
 import drawer from "./components/drawer";
 import table from "./components/table";
 import helpers from "./components/helpers";
+import dropdown from "./components/dropdown";
 
 window.Alpine = Alpine;
 
@@ -15,5 +16,6 @@ Alpine.data("lang", lang);
 Alpine.data("table", table);
 Alpine.data("drawer", drawer);
 Alpine.data("helpers", helpers);
+Alpine.data("dropdown", dropdown);
 
 Alpine.start();
