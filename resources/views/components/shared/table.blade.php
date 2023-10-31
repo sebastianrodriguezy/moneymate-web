@@ -94,8 +94,8 @@
       </template>
       <li>
         <button 
-          class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400"
-          :class="page === totalPages ? 'text-gray-300 dark:text-gray-500 cursor-default' : 'dark:hover:bg-gray-700 dark:hover:text-white hover:bg-gray-100 hover:text-gray-700'"
+          class="flex items-center justify-center px-3 h-8 leading-tight bg-white border border-gray-300 rounded-r-lg dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400"
+          :class="page === totalPages ? 'text-gray-300 dark:text-gray-500 cursor-default' : 'text-gray-500 dark:hover:bg-gray-700 dark:hover:text-white hover:bg-gray-100 hover:text-gray-700'"
           @click="changePage(page + 1)"
         >
           {!! __('pagination.next') !!}
