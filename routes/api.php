@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\api\AuthController;
 use App\Http\Controllers\api\ConfigurationController;
+use App\Http\Controllers\Api\TranslationController;
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\MovementsController;
 use App\Http\Controllers\PersonsController;
@@ -32,6 +33,7 @@ Route::middleware('auth:sanctum')->group(function () {
   Route::get('/movements', [MovementsController::class, 'getMovements']);
   Route::get('/categories', [CategoriesController::class, 'categories']);
   Route::get('/persons', [PersonsController::class, 'persons']);
+  Route::post('/translate', [TranslationController::class, 'translate']);
 });
 
 
