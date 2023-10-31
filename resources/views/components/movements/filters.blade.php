@@ -1,26 +1,26 @@
 <div class="w-full mt-2">
   <x-shared.dropdown
     catalog="'categories'"
-    label="Categorias"
-    placeholder="Selecciona una categoria"
+    :label="__('messages.movementsTableColCategory')"
+    :placeholder="__('messages.selectCategoryPlaceholder')"
     id="category"
     onSelect="(value) => updateFilters('category_id', value.id)"
   ></x-shared.dropdown>
   <x-shared.dropdown
     catalog="'persons'"
-    label="Personas"
-    placeholder="Selecciona una persona"
+    :label="__('messages.movementsTableColPerson')"
+    :placeholder="__('messages.selectPersonPlaceholder')"
     id="person"
     onSelect="(value) => updateFilters('person_id', value.id)"
   ></x-shared.dropdown>
   <x-shared.dropdown
     catalog="'types'"
-    label="Tipo"
-    placeholder="Selecciona un tipo"
+    :label="__('messages.movementsTableColType')"
+    :placeholder="__('messages.selectTypePlaceholder')"
     id="type"
     onSelect="(value) => updateFilters('type', value.id)"
   ></x-shared.dropdown>
-  
+
   <div class="w-full mt-6 flex flex-row gap-2 items-center justify-end">
     <button
       type="button" 
@@ -30,7 +30,7 @@
         clearFilters();
       }"
     >
-      Eliminar filtros
+      {{ __('messages.eraseFiltersButton') }}
     </button>
     <button
       type="button" 
@@ -40,7 +40,7 @@
         applyFilters();
       }"
     >
-      Aplicar filtros
+      {{ __('messages.filtersDrawerTitle') }}
     </button>
   </div>
 </div>

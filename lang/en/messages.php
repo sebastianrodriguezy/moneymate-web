@@ -64,5 +64,10 @@ return [
   'movementDateMoment' => 'Movement Date',
   'movementDateCreated' => 'Creation Date',
   'notSpecified' => 'Not specified',
+  'selectCategoryPlaceholder' => 'Select a category',
+  'selectPersonPlaceholder' => 'Select a person',
+  'selectTypePlaceholder' => 'Select a type',
+  'eraseFiltersButton' => 'Clear filters',
+
 
 ];

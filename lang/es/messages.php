@@ -64,5 +64,8 @@ return [
   'movementDateMoment' => 'Fecha del movimiento',
   'movementDateCreated' => 'Fecha de creación',
   'notSpecified' => 'No especificado',
-
+  'selectCategoryPlaceholder' => 'Selecciona una categoria',
+  'selectPersonPlaceholder' => 'Selecciona una persona',
+  'selectTypePlaceholder' => 'Selecciona un tipo',
+  'eraseFiltersButton' => 'Limpiar filtros',
 ];
