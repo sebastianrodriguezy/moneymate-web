@@ -12,8 +12,10 @@ export default (catalog, onClick = null) => ({
             this.isLoadingDropdown = true;
             try {
                 const url = `${PREFIX}${selectedCatalog.endpoint}`;
-                const response = await axios.get(url, {
+                const response = await axios(url, {
+                    method: selectedCatalog.method,
                     headers: commonHeaders,
+                    data: selectedCatalog.data,
                 });
 
                 const { rows } = response.data.data;
@@ -31,6 +33,10 @@ export default (catalog, onClick = null) => ({
                 this.isLoadingDropdown = false;
             }
         }
+
+        this.$watch("filters", (value) => {
+            if (Object.keys(value).length === 0) this.valueDropdown = null;
+        });
     },
     openDropdown: false,
     isLoadingDropdown: true,

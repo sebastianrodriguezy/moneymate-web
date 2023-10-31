@@ -25,17 +25,21 @@ export const catalogs = {
     categories: {
         async: true,
         endpoint: "/categories",
+        method: "GET",
+        data: null,
     },
     persons: {
         async: true,
         endpoint: "/persons",
+        method: "GET",
+        data: null,
     },
     types: {
-        async: false,
-        endpoint: null,
-        options: [
-            { id: 1, label: "income", key: "messages.income" },
-            { id: 2, label: "discharge", key: "messages.income" },
-        ],
+        async: true,
+        endpoint: "/translate",
+        method: "POST",
+        data: {
+            t_keys: ["income", "discharge"],
+        },
     },
 };
