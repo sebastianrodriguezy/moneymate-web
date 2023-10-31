@@ -55,7 +55,17 @@
       </tr>
     </thead>
     <tbody>
+
+      <template x-if="rows.length === 0">
+        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+          <th colspan="7" class="px-6 py-4 font-normal text-gray-900 whitespace-nowrap dark:text-white text-center">
+            {{ __('messages.tableResultsNotFound') }}
+          </th>
+        </tr>
+      </template>
+
       {{ $tableRows }}
+
     </tbody>
   </table>
 

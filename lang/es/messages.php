@@ -68,4 +68,5 @@ return [
   'selectPersonPlaceholder' => 'Selecciona una persona',
   'selectTypePlaceholder' => 'Selecciona un tipo',
   'eraseFiltersButton' => 'Limpiar filtros',
+  'tableResultsNotFound' => 'No se encontraron resultados'
 ];
