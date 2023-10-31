@@ -39,7 +39,7 @@ export default (endpoint = "") => ({
         this.totalPages =
             Math.floor(count / 10) === 0 ? 1 : Math.floor(count / 10);
         this.totalRows = totalRows;
-        this.rowsShowing = offset === 0 ? 1 : offset;
+        this.rowsShowing = count > 0 ? (offset === 0 ? 1 : offset) : 0;
         this.totalRowsShowing = count;
         this.loading = false;
         this.rows = rows;
