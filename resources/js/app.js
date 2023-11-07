@@ -7,6 +7,7 @@ import drawer from "./components/drawer";
 import table from "./components/table";
 import helpers from "./components/helpers";
 import dropdown from "./components/dropdown";
+import modal from "./components/modal";
 
 window.Alpine = Alpine;
 
@@ -17,5 +18,6 @@ Alpine.data("table", table);
 Alpine.data("drawer", drawer);
 Alpine.data("helpers", helpers);
 Alpine.data("dropdown", dropdown);
+Alpine.data("modal", modal);
 
 Alpine.start();
