@@ -1,4 +1,4 @@
-<aside class="w-full max-w-[280px] bg-gray-100 dark:bg-gray-800 p-6 flex flex-col text-gray-700 dark:text-gray-100">
+<aside class="w-full max-w-[280px] bg-gray-50 dark:bg-gray-800 p-6 flex flex-col text-gray-700 dark:text-gray-100">
   
   <input type="hidden" name="user_id" id="user_id" value="{{ $user->user_id }}">
   <input type="hidden" name="user_token" id="user_token" value="{{ request()->cookie('auth_token') }}">

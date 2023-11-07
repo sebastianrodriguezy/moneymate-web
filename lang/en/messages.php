@@ -69,4 +69,15 @@ return [
   'selectTypePlaceholder' => 'Select a type',
   'eraseFiltersButton' => 'Clear filters',
   'tableResultsNotFound' => 'No results found',
+  'categoriesTableColName' => 'Category Name',
+  'categoriasTableColColor' => 'Color',
+  'categoriesTableTitle' => 'List of Categories',
+  'categoriesTableSubtitle' => 'Categories you have created so far',
+  'categoriesDetailTitle' => 'Category Details',
+  'personsTableColName' => 'Person Name',
+  'personsTableTitle' => 'List of Persons',
+  'personsTableSubtitle' => 'Persons you have registered so far',
+  'personsDetailTitle' => 'Person Details',
+  'personRegisterButton' => 'Register New Person',
+
 ];

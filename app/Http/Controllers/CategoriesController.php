@@ -10,8 +10,17 @@ class CategoriesController extends Controller
   public function show()
   {
     $user = auth()->user();
+    $tableCols = [
+      'ID',
+      __('messages.categoriesTableColName'),
+      __('messages.categoriasTableColColor'),
+      __('messages.movementsTableColCreated'),
+    ];
 
-    return view('home.categories', ['user' => $user]);
+    return view('home.categories', [
+      'user' => $user,
+      'tableCols' => $tableCols
+    ]);
   }
 
   public function newCategory(Request $request)

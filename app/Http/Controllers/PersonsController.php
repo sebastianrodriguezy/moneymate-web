@@ -10,8 +10,16 @@ class PersonsController extends Controller
   public function show()
   {
     $user = auth()->user();
+    $tableCols = [
+      'ID',
+      __('messages.personsTableColName'),
+      __('messages.movementsTableColCreated'),
+    ];
 
-    return view('home.persons', ['user' => $user]);
+    return view('home.persons', [
+      'user' => $user,
+      'tableCols' => $tableCols
+    ]);
   }
 
   public function newPerson(Request $request)

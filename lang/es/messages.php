@@ -68,5 +68,16 @@ return [
   'selectPersonPlaceholder' => 'Selecciona una persona',
   'selectTypePlaceholder' => 'Selecciona un tipo',
   'eraseFiltersButton' => 'Limpiar filtros',
-  'tableResultsNotFound' => 'No se encontraron resultados'
+  'tableResultsNotFound' => 'No se encontraron resultados',
+  'categoriesTableColName' => 'Nombre de la Categoría',
+  'categoriesTableColColor' => 'Color',
+  'categoriesTableTitle' => 'Listado de Categorías',
+  'categoriesTableSubtitle' => 'Categorías que has creado hasta el momento',
+  'categoriesDetailTitle' => 'Detalles de la Categoría',
+  'personsTableColName' => 'Nombre de la Persona',
+  'personsTableTitle' => 'Listado de Personas',
+  'personsTableSubtitle' => 'Personas que has registrado hasta el momento',
+  'personsDetailTitle' => 'Detalles de la Persona',
+  'personRegisterButton' => 'Registrar nueva Persona'
+
 ];

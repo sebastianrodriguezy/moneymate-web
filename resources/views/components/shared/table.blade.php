@@ -24,14 +24,16 @@
 
     <x-shared.drawer class="ml-auto">
       <x-slot:trigger>
-        <button 
-          @click="openDrawer('filters', null, '{{ __('messages.filtersDrawerTitle') }}')" 
-          type="button" 
-          class="transition text-brand-500 hover:text-white border border-brand-600 hover:bg-brand-500 focus:ring-4 focus:outline-none focus:ring-brand-300 font-medium rounded-md text-sm px-5 py-2 text-center dark:border-brand-500 dark:text-brand-500 dark:hover:text-white dark:hover:bg-brand-500 dark:focus:ring-brand-800"
-        >
-          <ion-icon name="filter" class="w-3.5 h-3.5 mr-2" aria-hidden="true"></ion-icon>
-          {{ __('messages.filtersTitle') }}
-        </button>
+        @if ($showButtonFilters)
+          <button 
+            @click="openDrawer('filters', null, '{{ __('messages.filtersDrawerTitle') }}')" 
+            type="button" 
+            class="transition text-brand-500 hover:text-white border border-brand-600 hover:bg-brand-500 focus:ring-4 focus:outline-none focus:ring-brand-300 font-medium rounded-md text-sm px-5 py-2 text-center dark:border-brand-500 dark:text-brand-500 dark:hover:text-white dark:hover:bg-brand-500 dark:focus:ring-brand-800"
+          >
+            <ion-icon name="filter" class="w-3.5 h-3.5 mr-2" aria-hidden="true"></ion-icon>
+            {{ __('messages.filtersTitle') }}
+          </button>
+        @endif
       </x-slot:trigger>
 
       {{ $filters }}

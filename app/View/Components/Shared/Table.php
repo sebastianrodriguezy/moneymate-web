@@ -16,6 +16,7 @@ class Table extends Component
     public string $endpoint = '',
     public string $title = '',
     public string $description = '',
+    public bool $showButtonFilters = true
   ) {
     //
   }
