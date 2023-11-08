@@ -8,9 +8,10 @@
     class="w-full flex flex-col bg-gray-50 dark:bg-gray-800 p-4 px-6 rounded-md mb-5 text-gray-700 dark:text-gray-300">
     <div class="flex flex-row items-center justify-between">
       <h1 class="text-xl font-semibold">{{ __('messages.nav_link_movements') }}</h1>
+
       <x-shared.modal>
         <x-slot name="trigger">
-          <button @click="openModal('Prueba de modal')" type="button"
+          <button @click="openModal('new_movement')" type="button"
             class="transition text-white bg-brand-500 hover:bg-brand-600 focus:ring-4 focus:ring-brand-300 font-medium rounded-md text-sm px-5 py-2 dark:bg-brand-600 dark:hover:bg-brand-700 focus:outline-none dark:focus:ring-brand-800">
             {{ __('messages.nav_link_new_movement') }}
           </button>
@@ -18,6 +19,7 @@
 
         <h1>Este es el contenido</h1>
       </x-shared.modal>
+
     </div>
   </div>
 

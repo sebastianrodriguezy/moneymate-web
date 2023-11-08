@@ -1,6 +1,26 @@
-import { PREFIX, commonHeaders } from "../utils";
+import {
+    PREFIX,
+    MODAL_ACTIONS,
+    commonHeaders,
+    getQueryParams,
+    modalCatalogs,
+} from "../utils";
 
 export default () => ({
+    init() {
+        const params = getQueryParams();
+        if (params.get("action")) {
+            const action = params.get("action");
+
+            if (action === MODAL_ACTIONS.NEW_MOVEMENT) {
+                this.openModal(MODAL_ACTIONS.NEW_MOVEMENT);
+            }
+
+            if (action === MODAL_ACTIONS.NEW_CATEGORY) {
+                this.openModal(MODAL_ACTIONS.NEW_CATEGORY);
+            }
+        }
+    },
     showModal: false,
     titleModal: "",
     subtitleModal: "",
@@ -8,11 +28,13 @@ export default () => ({
     modalData: {},
     errors: [],
     endpoint: "",
-    openModal(title = "", subtitleModal = "", endpoint = "", dataSchema = {}) {
-        this.titleModal = title;
-        this.subtitleModal = subtitleModal;
-        this.modalData = dataSchema;
-        this.endpoint = endpoint;
+    openModal(catalog = "") {
+        const modalCatalog = modalCatalogs[catalog];
+
+        this.titleModal = modalCatalog.title;
+        this.subtitleModal = modalCatalog.subtitle;
+        this.modalData = modalCatalog.dataSchema;
+        this.endpoint = modalCatalog.endpoint;
         this.showModal = true;
     },
     closeModal() {

@@ -69,12 +69,12 @@ class Sidebar extends Component
   {
     return [
       [
-        'to' => 'movements?action=open_new',
+        'to' => 'movements?action=new_movement',
         'color' => 'brand',
         'text' => __('messages.nav_link_new_movement')
       ],
       [
-        'to' => 'categories?action=open_new',
+        'to' => 'categories?action=new_category',
         'color' => 'teal',
         'text' => __('messages.nav_link_new_category')
       ],

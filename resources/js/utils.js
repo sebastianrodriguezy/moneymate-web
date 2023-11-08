@@ -1,3 +1,5 @@
+import { TRANSLATIONS } from "./translations";
+
 const token = document.querySelector("#user_token");
 const userId = document.querySelector("#user_id");
 
@@ -41,5 +43,57 @@ export const catalogs = {
         data: {
             t_keys: ["income", "discharge"],
         },
+    },
+};
+
+export const getQueryParams = () => {
+    const urlParams = new URLSearchParams(window.location.search);
+
+    return urlParams;
+};
+
+export const MODAL_ACTIONS = {
+    NEW_MOVEMENT: "new_movement",
+    NEW_CATEGORY: "new_category",
+    NEW_PERSON: "new_person",
+};
+
+export const translateText = (key) => {
+    const path = window.location.pathname;
+    const [, language] = path.split("/");
+
+    return TRANSLATIONS[language][key];
+};
+
+export const modalCatalogs = {
+    [MODAL_ACTIONS.NEW_MOVEMENT]: {
+        title: translateText("new_movement_title"),
+        subtitle: translateText("new_movement_subtitle"),
+        dataSchema: {
+            type: "",
+            category_id: "",
+            person_id: null,
+            amount: "",
+            movement_date: new Date(),
+            comments: "",
+        },
+        endpoint: "/new_movement",
+    },
+    [MODAL_ACTIONS.NEW_CATEGORY]: {
+        title: translateText("new_category_title"),
+        subtitle: translateText("new_category_subtitle"),
+        dataSchema: {
+            name: "",
+            color: {},
+        },
+        endpoint: "/new_category",
+    },
+    [MODAL_ACTIONS.NEW_PERSON]: {
+        title: translateText("new_person_title"),
+        subtitle: translateText("new_person_subtitle"),
+        dataSchema: {
+            name: "",
+        },
+        endpoint: "/new_person",
     },
 };
