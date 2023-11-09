@@ -34,9 +34,11 @@ export default (catalog, onClick = null) => ({
             }
         }
 
-        this.$watch("filters", (value) => {
-            if (Object.keys(value).length === 0) this.valueDropdown = null;
-        });
+        if (this.$data.filters) {
+            this.$watch("filters", (value) => {
+                if (Object.keys(value).length === 0) this.valueDropdown = null;
+            });
+        }
     },
     openDropdown: false,
     isLoadingDropdown: true,

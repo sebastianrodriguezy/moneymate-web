@@ -79,5 +79,7 @@ return [
   'personsTableSubtitle' => 'Persons you have registered so far',
   'personsDetailTitle' => 'Person Details',
   'personRegisterButton' => 'Register New Person',
+  'modalCancelButton' => 'Cancel',
+  'modalSaveButton' => 'Save',
 
 ];

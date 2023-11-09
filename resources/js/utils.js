@@ -74,7 +74,7 @@ export const modalCatalogs = {
             category_id: "",
             person_id: null,
             amount: "",
-            movement_date: new Date(),
+            movement_date: "",
             comments: "",
         },
         endpoint: "/new_movement",

@@ -78,6 +78,8 @@ return [
   'personsTableTitle' => 'Listado de Personas',
   'personsTableSubtitle' => 'Personas que has registrado hasta el momento',
   'personsDetailTitle' => 'Detalles de la Persona',
-  'personRegisterButton' => 'Registrar nueva Persona'
+  'personRegisterButton' => 'Registrar nueva Persona',
+  'modalCancelButton' => 'Cancelar',
+  'modalSaveButton' => 'Guardar',
 
 ];

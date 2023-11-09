@@ -13,7 +13,7 @@ export default () => ({
             const action = params.get("action");
 
             if (action === MODAL_ACTIONS.NEW_MOVEMENT) {
-                this.openModal(MODAL_ACTIONS.NEW_MOVEMENT);
+                this.openModal(MODAL_ACTIONS.NEW_MOVEMENT, "2xl");
             }
 
             if (action === MODAL_ACTIONS.NEW_CATEGORY) {
@@ -22,19 +22,21 @@ export default () => ({
         }
     },
     showModal: false,
+    modalSize: "md",
     titleModal: "",
     subtitleModal: "",
     isSendingData: false,
     modalData: {},
     errors: [],
     endpoint: "",
-    openModal(catalog = "") {
+    openModal(catalog = "", size = "md") {
         const modalCatalog = modalCatalogs[catalog];
 
         this.titleModal = modalCatalog.title;
         this.subtitleModal = modalCatalog.subtitle;
         this.modalData = modalCatalog.dataSchema;
         this.endpoint = modalCatalog.endpoint;
+        this.modalSize = size;
         this.showModal = true;
     },
     closeModal() {

@@ -1,6 +1,8 @@
 import "./bootstrap";
 
 import Alpine from "alpinejs";
+import mask from "@alpinejs/mask";
+
 import darkModeStore from "./components/stores/darkmode";
 import lang from "./components/lang";
 import drawer from "./components/drawer";
@@ -10,6 +12,7 @@ import dropdown from "./components/dropdown";
 import modal from "./components/modal";
 
 window.Alpine = Alpine;
+Alpine.plugin(mask);
 
 Alpine.store("darkMode", darkModeStore);
 
