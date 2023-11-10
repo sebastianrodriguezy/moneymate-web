@@ -183,7 +183,11 @@ return [
   'attributes' => [
     'name' => 'name',
     'password' => 'password',
-    'password_confirm' => 'password confirm'
+    'password_confirm' => 'password confirm',
+    'fk_user_id' => 'User id',
+    'fk_category_id' => 'Category Id',
+    'fk_person_id' => 'Person Id',
+    'movement_date' => 'Movement date'
   ],
 
 ];

@@ -27,8 +27,9 @@ export default () => ({
     subtitleModal: "",
     isSendingData: false,
     modalData: {},
-    errors: [],
+    modalErrors: {},
     endpoint: "",
+    tranformBodyData: null,
     openModal(catalog = "", size = "md") {
         const modalCatalog = modalCatalogs[catalog];
 
@@ -37,6 +38,7 @@ export default () => ({
         this.modalData = modalCatalog.dataSchema;
         this.endpoint = modalCatalog.endpoint;
         this.modalSize = size;
+        this.tranformBodyData = modalCatalog?.tranformBodyData;
         this.showModal = true;
     },
     closeModal() {
@@ -51,22 +53,18 @@ export default () => ({
     async sendData() {
         try {
             this.isSendingData = true;
+            this.modalErrors = {};
+
+            const parsedData = this.tranformBodyData
+                ? this.tranformBodyData(this.modalData)
+                : this.modalData;
 
             const url = `${PREFIX}${this.endpoint}`;
-            const response = await axios(url, {
+            await axios(url, {
                 method: "POST",
                 headers: commonHeaders,
-                data: this.modalData,
+                data: parsedData,
             });
-
-            const { errors } = response.data.data;
-
-            if (errors) {
-                this.isSendingData = false;
-                this.errors = errors;
-
-                return;
-            }
 
             this.isSendingData = false;
             this.errors = [];
@@ -74,6 +72,13 @@ export default () => ({
             this.closeModal();
         } catch (error) {
             console.log(error);
+            this.isSendingData = false;
+            const errors = error?.response?.data?.errors;
+            const errorsFormated = {};
+            Object.keys(errors || {}).forEach((key) => {
+                errorsFormated[key] = errors[key][0];
+            });
+            this.modalErrors = errorsFormated;
         }
     },
 });

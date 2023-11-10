@@ -1,3 +1,6 @@
+import { parse, format } from "date-fns";
+import { v4 as uuidv4 } from "uuid";
+
 import { TRANSLATIONS } from "./translations";
 
 const token = document.querySelector("#user_token");
@@ -77,7 +80,26 @@ export const modalCatalogs = {
             movement_date: "",
             comments: "",
         },
-        endpoint: "/new_movement",
+        endpoint: "/movement",
+        tranformBodyData: (data) => {
+            return {
+                movement_id: uuidv4(),
+                type: data.type,
+                fk_user_id: getUserId(),
+                fk_category_id: data.category_id,
+                fk_person_id: data?.person_id || null,
+                amount: Number(
+                    String(data.amount).replace(",", "").replace(".", "")
+                ),
+                movement_date: data.movement_date
+                    ? format(
+                          parse(data.movement_date, "dd/MM/yyyy", new Date()),
+                          "yyyy-MM-dd"
+                      )
+                    : null,
+                comments: data?.comments || "",
+            };
+        },
     },
     [MODAL_ACTIONS.NEW_CATEGORY]: {
         title: translateText("new_category_title"),
