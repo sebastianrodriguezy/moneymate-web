@@ -106,9 +106,21 @@ export const modalCatalogs = {
         subtitle: translateText("new_category_subtitle"),
         dataSchema: {
             name: "",
-            color: {},
+            color: {
+                name: "default",
+                light: "gray.200",
+                dark: "gray.700",
+            },
         },
-        endpoint: "/new_category",
+        endpoint: "/category",
+        tranformBodyData: (data) => {
+            return {
+                category_id: uuidv4(),
+                fk_user_id: getUserId(),
+                name: data.name,
+                color: JSON.stringify(data.color),
+            };
+        },
     },
     [MODAL_ACTIONS.NEW_PERSON]: {
         title: translateText("new_person_title"),

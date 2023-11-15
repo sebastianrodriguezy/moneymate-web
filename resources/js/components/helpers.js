@@ -64,4 +64,112 @@ export default () => ({
         const formatType = withHours ? "dd/MM/yyyy '-' hh:mm" : "dd/MM/yyyy";
         return format(parseISO(date), formatType);
     },
+    getColorsToSelect() {
+        return [
+            {
+                name: "default",
+                class: "bg-gray-700 dark:bg-gray-600",
+                jsonObject: {
+                    name: "default",
+                    light: "gray.200",
+                    dark: "gray.700",
+                },
+            },
+            {
+                name: "primary",
+                class: "bg-brand-500 dark:bg-brand-600",
+                jsonObject: {
+                    name: "primary",
+                    light: "primary.500",
+                    dark: "primary.500",
+                },
+            },
+            {
+                name: "secondary",
+                class: "bg-orange-500 dark:bg-orange-600",
+                jsonObject: {
+                    name: "secondary",
+                    light: "secondary.500",
+                    dark: "secondary.500",
+                },
+            },
+            {
+                name: "tertiary",
+                class: "bg-cyan-500 dark:bg-cyan-600",
+                jsonObject: {
+                    name: "tertiary",
+                    light: "tertiary.500",
+                    dark: "tertiary.500",
+                },
+            },
+            {
+                name: "rose",
+                class: "bg-rose-500 dark:bg-rose-600",
+                jsonObject: {
+                    name: "rose",
+                    light: "rose.500",
+                    dark: "rose.500",
+                },
+            },
+            {
+                name: "purple",
+                class: "bg-purple-500 dark:bg-purple-600",
+                jsonObject: {
+                    name: "purple",
+                    light: "purple.500",
+                    dark: "purple.500",
+                },
+            },
+            {
+                name: "indigo",
+                class: "bg-indigo-500 dark:bg-indigo-600",
+                jsonObject: {
+                    name: "indigo",
+                    light: "indigo.500",
+                    dark: "indigo.500",
+                },
+            },
+            {
+                name: "amber",
+                class: "bg-amber-500 dark:bg-amber-600",
+                jsonObject: {
+                    name: "amber",
+                    light: "amber.500",
+                    dark: "amber.500",
+                },
+            },
+            {
+                name: "blueGray",
+                class: "bg-violet-500 dark:bg-violet-600",
+                jsonObject: {
+                    name: "blueGray",
+                    light: "blueGray.500",
+                    dark: "blueGray.500",
+                },
+            },
+            {
+                name: "red",
+                class: "bg-red-500 dark:bg-red-600",
+                jsonObject: { name: "red", light: "red.500", dark: "red.500" },
+            },
+            {
+                name: "yellow",
+                class: "bg-yellow-500 dark:bg-yellow-600",
+                jsonObject: {
+                    name: "yellow",
+                    light: "yellow.500",
+                    dark: "yellow.500",
+                },
+            },
+            {
+                name: "lime",
+                class: "bg-lime-500 dark:bg-lime-600",
+                jsonObject: {
+                    name: "lime",
+                    light: "lime.500",
+                    dark: "lime.500",
+                },
+            },
+        ];
+    },
 });

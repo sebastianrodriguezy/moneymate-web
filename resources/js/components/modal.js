@@ -47,8 +47,8 @@ export default () => ({
         this.showModal = false;
         this.isSendingData = false;
     },
-    updateModalData(key, name) {
-        this.modalData[key] = name;
+    updateModalData(key, value) {
+        this.modalData[key] = value;
     },
     async sendData() {
         try {
@@ -71,7 +71,6 @@ export default () => ({
 
             this.closeModal();
         } catch (error) {
-            console.log(error);
             this.isSendingData = false;
             const errors = error?.response?.data?.errors;
             const errorsFormated = {};
