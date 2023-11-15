@@ -70,6 +70,7 @@ export default () => ({
             this.errors = [];
 
             this.closeModal();
+            this.$dispatch("refresh-table");
         } catch (error) {
             this.isSendingData = false;
             const errors = error?.response?.data?.errors;

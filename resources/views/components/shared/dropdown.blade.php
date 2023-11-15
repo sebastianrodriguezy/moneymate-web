@@ -39,7 +39,7 @@
     <ul x-ref="panel" x-show="openDropdown" x-transition.origin.top.left
       x-on:click.outside="closeDropdown($refs.button)" :id="$id('dropdown-button-{{ $id }}')"
       style="display: none;"
-      class="absolute left-0 mt-2 rounded-md bg-gray-200 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 shadow-md w-full z-10">
+      class="absolute left-0 mt-2 rounded-md bg-gray-200 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 shadow-md w-full z-50 max-h-[200px] overflow-y-auto">
       <template x-for="option in optionsDropdown" :key="option.id">
         <li @click="onClickOptionDropdown(option)"
           class="cursor-pointer flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-sm hover:bg-gray-300/30 disabled:text-gray-500">
