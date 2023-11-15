@@ -128,6 +128,13 @@ export const modalCatalogs = {
         dataSchema: {
             name: "",
         },
-        endpoint: "/new_person",
+        endpoint: "/person",
+        tranformBodyData: (data) => {
+            return {
+                person_id: uuidv4(),
+                fk_user_id: getUserId(),
+                name: data.name,
+            };
+        },
     },
 };

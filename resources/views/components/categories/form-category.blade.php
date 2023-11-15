@@ -1,6 +1,5 @@
 <div class="w-full flex flex-col gap-3">
 
-
   <div class="mb-3">
     <label for="name" class="label-base">{{ __('messages.categoriesTableColName') }}</label>
     <input type="text" id="name" name="name" class="input-base"
