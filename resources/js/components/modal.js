@@ -4,7 +4,10 @@ import {
     commonHeaders,
     getQueryParams,
     modalCatalogs,
+    translateText,
 } from "../utils";
+
+let dataSchema = {};
 
 export default () => ({
     init() {
@@ -40,6 +43,8 @@ export default () => ({
         this.modalSize = size;
         this.tranformBodyData = modalCatalog?.tranformBodyData;
         this.showModal = true;
+
+        dataSchema = modalCatalog.dataSchema;
     },
     closeModal() {
         if (this.isSendingData) return;
@@ -70,7 +75,14 @@ export default () => ({
             this.errors = [];
 
             this.closeModal();
+
+            this.modalData = { ...dataSchema };
+
             this.$dispatch("refresh-table");
+            this.$dispatch("notify", {
+                type: "success",
+                message: translateText("success_register"),
+            });
         } catch (error) {
             this.isSendingData = false;
             const errors = error?.response?.data?.errors;
@@ -79,6 +91,11 @@ export default () => ({
                 errorsFormated[key] = errors[key][0];
             });
             this.modalErrors = errorsFormated;
+
+            this.$dispatch("notify", {
+                type: "error",
+                message: translateText("error_register"),
+            });
         }
     },
 });

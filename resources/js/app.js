@@ -10,6 +10,7 @@ import table from "./components/table";
 import helpers from "./components/helpers";
 import dropdown from "./components/dropdown";
 import modal from "./components/modal";
+import alert from "./components/alert";
 
 window.Alpine = Alpine;
 Alpine.plugin(mask);
@@ -22,5 +23,6 @@ Alpine.data("drawer", drawer);
 Alpine.data("helpers", helpers);
 Alpine.data("dropdown", dropdown);
 Alpine.data("modal", modal);
+Alpine.data("alert", alert);
 
 Alpine.start();

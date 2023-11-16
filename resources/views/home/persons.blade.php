@@ -23,7 +23,8 @@
     </div>
   </div>
 
-  <x-shared.table :headings="$tableCols" :endpoint="'/persons'" :title="__('messages.personsTableTitle')" :description="__('messages.personsTableSubtitle')" :showButtonFilters="false">
+  <x-shared.table :headings="$tableCols" :endpoint="'/persons'" :title="__('messages.personsTableTitle')" :description="__('messages.personsTableSubtitle')" :showButtonFilters="false"
+    limit="10">
     <x-slot name="filters">
       <template x-if="activeDrawer === 'detail'">
         <x-persons.details></x-persons.details>

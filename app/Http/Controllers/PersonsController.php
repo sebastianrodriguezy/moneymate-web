@@ -59,7 +59,7 @@ class PersonsController extends Controller
 
     $user = $request->user();
 
-    $limit = 50;
+    $limit = isset($fields['limit']) ? (int) $fields['limit'] : 50;
     $page = isset($fields['page']) ? (int) $fields['page'] : 1;
     $offset = $page === 1 ? 0 : ($page * $limit) - $limit;
 

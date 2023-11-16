@@ -16,7 +16,8 @@ class Table extends Component
     public string $endpoint = '',
     public string $title = '',
     public string $description = '',
-    public bool $showButtonFilters = true
+    public bool $showButtonFilters = true,
+    public Int $limit = 10,
   ) {
     //
   }

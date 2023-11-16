@@ -16,7 +16,7 @@
         x-transition:leave="transition ease-in duration-200 transform"
         x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100"
         x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-        class="w-full p-5 overflow-hidden text-left transition-all transform bg-gray-50 dark:bg-gray-800 rounded-md shadow-xl 2xl:max-w-2xl"
+        class="w-full p-5 text-left transition-all transform bg-gray-50 dark:bg-gray-800 rounded-md shadow-xl 2xl:max-w-2xl"
         :class="modalSize === '2xl' ? 'max-w-2xl' : 'max-w-md'">
         <div class="flex items-center justify-between space-x-4">
           <div class="flex flex-row items-center gap-3">

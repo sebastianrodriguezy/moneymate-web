@@ -1,6 +1,6 @@
 <div {{ $attributes }}
   class="relative overflow-x-auto rounded-md w-full bg-gray-50 dark:bg-gray-800 text-gray-700 dark:text-gray-300"
-  x-data="table('{{ $endpoint }}')" @refresh-table.window="await callRequest()">
+  x-data="table('{{ $endpoint }}', {{ $limit }})" @refresh-table.window="await callRequest()">
 
   <div class="w-full p-5 flex flex-row items-center">
 

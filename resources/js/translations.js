@@ -6,6 +6,8 @@ export const TRANSLATIONS = {
         new_category_subtitle: "Registra una nueva categoría",
         new_person_title: "Registrar nueva persona",
         new_person_subtitle: "Agrega y Registra una nueva persona",
+        success_register: "Se agrego con exito el nuevo registro",
+        error_register: "Ocurrio un error agregando el registro",
     },
     en: {
         new_movement_title: "New Movement",
@@ -14,5 +16,7 @@ export const TRANSLATIONS = {
         new_category_subtitle: "Register a new category",
         new_person_title: "Register new person",
         new_person_subtitle: "Add and Register a new person",
+        success_register: "New record successfully added",
+        error_register: "An error occurred while adding the record",
     },
 };

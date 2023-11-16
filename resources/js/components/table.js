@@ -1,6 +1,6 @@
 import { PREFIX, commonHeaders } from "../utils";
 
-export default (endpoint = "") => ({
+export default (endpoint = "", limit = 50) => ({
     async init() {
         try {
             await this.callRequest();
@@ -26,7 +26,7 @@ export default (endpoint = "") => ({
             (key) => (filtersString += `&${key}=${this.filters[key]}`)
         );
 
-        const finalUri = `${PREFIX}${endpoint}?page=${this.page}${filtersString}`;
+        const finalUri = `${PREFIX}${endpoint}?page=${this.page}&limit=${limit}${filtersString}`;
 
         const response = await axios.get(finalUri, {
             headers: commonHeaders,
