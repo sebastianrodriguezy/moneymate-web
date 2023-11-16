@@ -33,14 +33,14 @@ export default (endpoint = "", limit = 50) => ({
         });
 
         const {
-            data: { totalRows, count, rows, offset },
+            data: { totalRows, count, rows, offset, page },
         } = response.data;
 
         this.totalPages =
             Math.ceil(count / 10) === 0 ? 1 : Math.ceil(count / 10);
         this.totalRows = totalRows;
         this.rowsShowing = count > 0 ? (offset === 0 ? 1 : offset) : 0;
-        this.totalRowsShowing = totalRows < 10 ? count : totalRows;
+        this.totalRowsShowing = this.totalPages === page ? count : 10 * page;
         this.loading = false;
         this.rows = rows;
         this.count = count;
