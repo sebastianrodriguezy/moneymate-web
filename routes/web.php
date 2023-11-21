@@ -9,6 +9,7 @@ use App\Http\Controllers\MovementsController;
 use App\Http\Controllers\PersonsController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ResetPasswordController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,6 +42,7 @@ Route::prefix('{locale?}')->middleware('localized')->group(function () {
     Route::get('/movements', [MovementsController::class, 'show']);
     Route::get('/categories', [CategoriesController::class, 'show']);
     Route::get('/persons', [PersonsController::class, 'show']);
+    Route::get('/user', [UserController::class, 'show']);
   });
 });
 

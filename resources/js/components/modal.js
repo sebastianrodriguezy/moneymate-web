@@ -7,8 +7,6 @@ import {
     translateText,
 } from "../utils";
 
-let dataSchema = {};
-
 export default () => ({
     init() {
         const params = getQueryParams();
@@ -43,14 +41,13 @@ export default () => ({
         this.modalSize = size;
         this.tranformBodyData = modalCatalog?.tranformBodyData;
         this.showModal = true;
-
-        dataSchema = modalCatalog.dataSchema;
     },
     closeModal() {
         if (this.isSendingData) return;
 
         this.showModal = false;
         this.isSendingData = false;
+        this.modalData = {};
     },
     updateModalData(key, value) {
         this.modalData[key] = value;
@@ -75,8 +72,6 @@ export default () => ({
             this.errors = [];
 
             this.closeModal();
-
-            this.modalData = { ...dataSchema };
 
             this.$dispatch("refresh-table");
             this.$dispatch("notify", {
