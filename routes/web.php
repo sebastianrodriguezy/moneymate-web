@@ -42,7 +42,6 @@ Route::prefix('{locale?}')->middleware('localized')->group(function () {
     Route::get('/movements', [MovementsController::class, 'show']);
     Route::get('/categories', [CategoriesController::class, 'show']);
     Route::get('/persons', [PersonsController::class, 'show']);
-    Route::get('/user', [UserController::class, 'show']);
   });
 });
 

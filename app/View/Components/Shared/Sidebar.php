@@ -78,11 +78,6 @@ class Sidebar extends Component
         'color' => 'teal',
         'text' => __('messages.nav_link_new_category')
       ],
-      [
-        'to' => 'user',
-        'color' => 'violet',
-        'text' => __('messages.nav_link_config')
-      ],
     ];
   }
 }

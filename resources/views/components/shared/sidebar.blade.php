@@ -10,12 +10,12 @@
   </a>
 
   <div class="flex flex-col items-center w-full my-6">
-    <a href="user" title="{{ __('messages.user_profile_title') }}" class="flex w-full justify-center mb-6">
+    <div class="flex w-full justify-center mb-6">
       <figure class="w-full max-w-[80px] h-full max-h-[80px] overflow-hidden rounded-full">
         <img alt="{{ __('messages.user_profile_avatar_alt') }}" width="100%"
           src="https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?w=826&t=st=1696908592~exp=1696909192~hmac=d7d24f9b3e05db4c770af7687d87447681a6ac87ce56ed6b986b326200fccbc8" />
       </figure>
-    </a>
+    </div>
     <p class="leading-4 font-semibold mb-2 text-center">{{ $user->name }}</p>
     <p class="leading-4 font-extralight text-sm text-gray-500 dark:text-gray-400">{{ $user->email }}</p>
   </div>
