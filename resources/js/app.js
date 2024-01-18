@@ -11,6 +11,7 @@ import helpers from "./components/helpers";
 import dropdown from "./components/dropdown";
 import modal from "./components/modal";
 import alert from "./components/alert";
+import homeCalcs from "./components/homeCalcs";
 
 window.Alpine = Alpine;
 Alpine.plugin(mask);
@@ -24,5 +25,6 @@ Alpine.data("helpers", helpers);
 Alpine.data("dropdown", dropdown);
 Alpine.data("modal", modal);
 Alpine.data("alert", alert);
+Alpine.data("homeCalcs", homeCalcs);
 
 Alpine.start();

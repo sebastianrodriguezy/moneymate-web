@@ -63,6 +63,7 @@ class MovementsController extends Controller
   {
     $fields = $request->validate([
       'page' => 'nullable|numeric|min:1',
+      'limit' => 'nullable|numeric|min:1',
       'type' => 'nullable|in:discharge,income',
       'category_id' => 'nullable|exists:categories,category_id',
       'person_id' => 'nullable|exists:persons,person_id',
@@ -70,7 +71,7 @@ class MovementsController extends Controller
 
     $user = $request->user();
 
-    $limit = 10;
+    $limit = isset($fields['limit']) ? (int) $fields['limit'] : 10;
     $page = isset($fields['page']) ? (int) $fields['page'] : 1;
     $offset = $page === 1 ? 0 : ($page * $limit) - $limit;
 
@@ -139,6 +140,34 @@ class MovementsController extends Controller
       "status" => 200,
       "message" => "movements obtained succesfully",
       "data" => $data,
+    ]);
+  }
+
+  public function getTotals(Request $request)
+  {
+    $user = $request->user();
+    $limit = 100;
+
+    $queryIncome = Movement::where('fk_user_id', '=', $user->user_id)
+      ->where('type', '=', 'income')
+      ->orderBy('created_at', 'desc')
+      ->take($limit);
+
+    $queryDischarge = Movement::where('fk_user_id', '=', $user->user_id)
+      ->where('type', '=', 'discharge')
+      ->orderBy('created_at', 'desc')
+      ->take($limit);
+
+    $countIncome = (int) $queryIncome->sum('amount');
+    $countDischarge = (int) $queryDischarge->sum('amount');
+
+    return response()->json([
+      "status" => 200,
+      "message" => "results obtained succesfully",
+      "data" => [
+        'totalIncome' => $countIncome,
+        'totalDischarge' => $countDischarge,
+      ],
     ]);
   }
 }
