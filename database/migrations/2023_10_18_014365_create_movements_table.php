@@ -23,7 +23,9 @@ return new class extends Migration
       $table->timestamps();
     });
 
-    Schema::table('movements', function (Blueprint $table) {
+    /* Commented because PlanetScale doesn't allow foreing keys on mysql DBS */
+
+    /* Schema::table('movements', function (Blueprint $table) {
       $table->foreign('fk_user_id')
         ->references('user_id')
         ->on('users')
@@ -39,7 +41,7 @@ return new class extends Migration
         ->on('persons')
         ->onUpdate('cascade')
         ->onDelete('cascade');
-    });
+    }); */
   }
 
   /**
