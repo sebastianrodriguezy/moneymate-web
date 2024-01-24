@@ -41,7 +41,7 @@ class LoginController extends Controller
       return redirectLocale('/home', $request)->withCookies([$cookie, $remember_cookie]);
     }
 
-    return redirectLocale('/login', $request)->withErrors(['invalid_credentials' => __('auth.invalid')]);
+    return redirectLocale('/login', $request)->withErrors(['invalid_credentials' => __('auth.failed')]);
   }
 
   public function logout(Request $request): RedirectResponse
