@@ -1,13 +1,14 @@
 <?php
 
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
+
 use App\Http\Controllers\api\AuthController;
 use App\Http\Controllers\api\ConfigurationController;
-use App\Http\Controllers\Api\TranslationController;
+use App\Http\Controllers\api\TranslationController;
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\MovementsController;
 use App\Http\Controllers\PersonsController;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
