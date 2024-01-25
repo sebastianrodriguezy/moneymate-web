@@ -103,5 +103,7 @@ return [
   'chartMovementsTitle' => 'Registros por tipo durante los ultimos 6 meses',
   'chartMovementsIncomeLabel' => 'Ingresos',
   'chartMovementsDischargeLabel' => 'Egresos',
+  'chartRegistersTitle' => 'Total registros por sección',
+  'chartRegistersSubtitle' => 'Registro totales durante los ultimos 6 meses',
 
 ];

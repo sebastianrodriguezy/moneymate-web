@@ -11,14 +11,14 @@
     </div>
   </div>
 
-  <div class="w-full h-[450px] flex flex-row gap-4 items-center mb-5">
+  <div class="w-full flex flex-row gap-4 items-center mb-5">
     <div
-      class="max-w-1/2 w-full h-[450px] flex-1 rounded-md bg-gray-50 dark:bg-gray-800 p-4 text-gray-700 dark:text-gray-300">
-      <div class="w-full h-[400px] dark:bg-gray-400 rounded-md">{!! $sectionsChart->container() !!}</div>
+      class="max-w-1/2 w-full flex items-center justify-center flex-1 self-stretch rounded-md bg-gray-50 dark:bg-gray-800 p-4 text-gray-700 dark:text-gray-300">
+      <div class="w-full dark:bg-gray-400 rounded-md">{!! $sectionsChart->container() !!}</div>
     </div>
     <div
-      class="max-w-1/2 w-full h-[450px] flex-1 rounded-md bg-gray-50 dark:bg-gray-800 p-4 text-gray-700 dark:text-gray-300">
-      <div class="w-full h-[400px] dark:bg-gray-400 rounded-md">Hola</div>
+      class="max-w-1/2 w-full flex items-center justify-center flex-1 self-stretch rounded-md bg-gray-50 dark:bg-gray-800 p-4 text-gray-700 dark:text-gray-300">
+      <div class="w-full dark:bg-gray-400 rounded-md">{!! $registersCharts->container() !!}</div>
     </div>
   </div>
 
@@ -28,8 +28,10 @@
 
   <script src="{{ $sectionsChart->cdn() }}"></script>
   <script src="{{ $movementsCharts->cdn() }}"></script>
+  <script src="{{ $registersCharts->cdn() }}"></script>
 
   {{ $sectionsChart->script() }}
   {{ $movementsCharts->script() }}
+  {{ $registersCharts->script() }}
 
 </x-layouts.dashboard>

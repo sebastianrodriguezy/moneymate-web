@@ -103,5 +103,7 @@ return [
   'chartMovementsTitle' => 'Records by type for the last 6 months',
   'chartMovementsIncomeLabel' => 'Income',
   'chartMovementsDischargeLabel' => 'Discharge',
+  'chartRegistersTitle' => 'Total records by section',
+  'chartRegistersSubtitle' => 'Record totals for the last 6 months',
 
 ];
