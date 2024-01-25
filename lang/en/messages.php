@@ -99,5 +99,9 @@ return [
   'categoriesCardsNoResults' => 'No results were found, please enter new categories to get a result',
   'personsCardsNoResults' => 'No results were found, please register new persons to get a result',
   'homeCardsError' => 'An unexpected error occurred obtaining the following results',
+  'chartSectionsTitle' => 'Records by section',
+  'chartMovementsTitle' => 'Records by type for the last 6 months',
+  'chartMovementsIncomeLabel' => 'Income',
+  'chartMovementsDischargeLabel' => 'Discharge',
 
 ];

@@ -99,5 +99,9 @@ return [
   'categoriesCardsNoResults' => 'No se encontrarón resultados, por favor registra nuevas categorias para obtener un resultado',
   'personsCardsNoResults' => 'No se encontrarón resultados, por favor registra nuevas personas para obtener un resultado',
   'homeCardsError' => 'Ocurrio un error inesperado obteniendo los resultados',
+  'chartSectionsTitle' => 'Registros por sección',
+  'chartMovementsTitle' => 'Registros por tipo durante los ultimos 6 meses',
+  'chartMovementsIncomeLabel' => 'Ingresos',
+  'chartMovementsDischargeLabel' => 'Egresos',
 
 ];
